@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My TripsVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="MyTripsVC" id="Y6W-OH-hqX" customClass="MyTripsVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zmC-q7-pbR">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XF-3w-NTK">
+                                <rect key="frame" x="15" y="426" width="363" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="zmC-q7-pbR" secondAttribute="bottom" id="2Mw-jy-8Bn"/>
+                            <constraint firstItem="2XF-3w-NTK" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="BT3-by-XEd"/>
+                            <constraint firstItem="zmC-q7-pbR" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="VhV-rR-sMo"/>
+                            <constraint firstItem="2XF-3w-NTK" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Xfu-D5-TyO"/>
+                            <constraint firstAttribute="trailing" secondItem="2XF-3w-NTK" secondAttribute="trailing" constant="15" id="YhQ-a7-JcA"/>
+                            <constraint firstItem="2XF-3w-NTK" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" constant="15" id="acb-oE-7CB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zmC-q7-pbR" secondAttribute="trailing" id="lWO-Rk-D4s"/>
+                            <constraint firstItem="zmC-q7-pbR" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zPc-jH-Way"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTripTableView" destination="zmC-q7-pbR" id="PwT-Ff-FRj"/>
+                        <outlet property="nodataLabel" destination="2XF-3w-NTK" id="Kkb-K7-ftF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11" y="5"/>
+        </scene>
+        <!--My Trip DetailVC-->
+        <scene sceneID="5GJ-UM-cPg">
+            <objects>
+                <viewController storyboardIdentifier="MyTripDetailVC" id="i5O-LP-meO" customClass="MyTripDetailVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VW3-Lv-tey">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDe-Z7-vSS">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFt-U8-ePX">
+                                <rect key="frame" x="15" y="438.66666666666669" width="363" height="0.0"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="GJW-ex-LQR"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GJW-ex-LQR" firstAttribute="bottom" secondItem="NDe-Z7-vSS" secondAttribute="bottom" id="4Mv-oM-0ap"/>
+                            <constraint firstAttribute="trailing" secondItem="vFt-U8-ePX" secondAttribute="trailing" constant="15" id="Nz1-uP-2B7"/>
+                            <constraint firstItem="GJW-ex-LQR" firstAttribute="trailing" secondItem="NDe-Z7-vSS" secondAttribute="trailing" id="PLE-Z9-vqG"/>
+                            <constraint firstItem="vFt-U8-ePX" firstAttribute="centerX" secondItem="NDe-Z7-vSS" secondAttribute="centerX" id="QJT-jZ-KIv"/>
+                            <constraint firstItem="NDe-Z7-vSS" firstAttribute="leading" secondItem="GJW-ex-LQR" secondAttribute="leading" id="W4N-33-wjN"/>
+                            <constraint firstItem="NDe-Z7-vSS" firstAttribute="top" secondItem="GJW-ex-LQR" secondAttribute="top" id="cec-aK-uSw"/>
+                            <constraint firstItem="vFt-U8-ePX" firstAttribute="centerY" secondItem="NDe-Z7-vSS" secondAttribute="centerY" id="iHP-xa-tNC"/>
+                            <constraint firstItem="vFt-U8-ePX" firstAttribute="leading" secondItem="VW3-Lv-tey" secondAttribute="leading" constant="15" id="lWz-qc-8rg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTripDetailTableView" destination="NDe-Z7-vSS" id="thX-hd-Ezo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwP-tN-9F3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="683" y="5"/>
+        </scene>
+        <!--My Trips DetailsVC-->
+        <scene sceneID="8ab-vw-IWO">
+            <objects>
+                <viewController storyboardIdentifier="MyTripsDetailsVC" id="exL-qH-CAi" customClass="MyTripsDetailsVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X2e-VX-L2f">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1Az-rw-QOs">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VOa-DZ-iqz"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.89803921568627454" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1Az-rw-QOs" firstAttribute="leading" secondItem="VOa-DZ-iqz" secondAttribute="leading" id="QBv-Iq-5aJ"/>
+                            <constraint firstItem="VOa-DZ-iqz" firstAttribute="bottom" secondItem="1Az-rw-QOs" secondAttribute="bottom" id="UnW-hj-ECN"/>
+                            <constraint firstItem="VOa-DZ-iqz" firstAttribute="trailing" secondItem="1Az-rw-QOs" secondAttribute="trailing" id="iLL-x2-IV8"/>
+                            <constraint firstItem="1Az-rw-QOs" firstAttribute="top" secondItem="VOa-DZ-iqz" secondAttribute="top" id="ofa-fA-P6g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myTripDetailsTableView" destination="1Az-rw-QOs" id="IZI-Fz-GzJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sd2-aK-D0n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-666" y="11"/>
+        </scene>
+    </scenes>
+</document>

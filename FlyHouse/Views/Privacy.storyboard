@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PrivacyVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="PrivacyVC" id="Y6W-OH-hqX" customClass="PrivacyVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xje-w9-ef0">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Private Jet Charters...only betters!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="paF-Vg-LR2">
+                                        <rect key="frame" x="20" y="80" width="353" height="14"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9w-tJ-MhV">
+                                        <rect key="frame" x="10" y="109" width="373" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrS-Pz-Pli">
+                                                <rect key="frame" x="12" y="5" width="349" height="64.666666666666671"/>
+                                                <string key="text">Please click below to visit the FlyHouse privacy center.  You will be able to request access to the  information we have stored about you.  Additionally you may also notify us to delete the information we have about you.</string>
+                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="xrS-Pz-Pli" firstAttribute="leading" secondItem="U9w-tJ-MhV" secondAttribute="leading" constant="12" id="081-OX-Met"/>
+                                            <constraint firstAttribute="height" constant="90" id="88A-E0-gYs"/>
+                                            <constraint firstItem="xrS-Pz-Pli" firstAttribute="top" secondItem="U9w-tJ-MhV" secondAttribute="top" constant="5" id="Nvr-Qp-4eG"/>
+                                            <constraint firstAttribute="trailing" secondItem="xrS-Pz-Pli" secondAttribute="trailing" constant="12" id="Oho-DX-b8t"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ALL RIGHTS RESERVED ©2025 FLYHOUSE TECHNOLOGY, LLC" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L16-Ah-yPp">
+                                        <rect key="frame" x="15" y="732" width="363" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bEr-Xp-4to">
+                                        <rect key="frame" x="20" y="662" width="353" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Ifw-d4-bhV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="17"/>
+                                        <color key="tintColor" red="0.1058823529" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Privacy Center"/>
+                                        <connections>
+                                            <action selector="privacyBtnClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="gCm-Yk-0ch"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="L16-Ah-yPp" secondAttribute="trailing" constant="15" id="145-km-L94"/>
+                                    <constraint firstItem="U9w-tJ-MhV" firstAttribute="centerX" secondItem="Xje-w9-ef0" secondAttribute="centerX" id="1Et-wr-P7P"/>
+                                    <constraint firstItem="paF-Vg-LR2" firstAttribute="leading" secondItem="Xje-w9-ef0" secondAttribute="leading" constant="20" id="231-P2-we6"/>
+                                    <constraint firstItem="U9w-tJ-MhV" firstAttribute="top" secondItem="paF-Vg-LR2" secondAttribute="bottom" constant="15" id="2nk-hq-cfT"/>
+                                    <constraint firstItem="bEr-Xp-4to" firstAttribute="leading" secondItem="Xje-w9-ef0" secondAttribute="leading" constant="20" id="3QS-0A-D6S"/>
+                                    <constraint firstAttribute="bottom" secondItem="L16-Ah-yPp" secondAttribute="bottom" constant="15" id="9IS-hK-Jd8"/>
+                                    <constraint firstItem="L16-Ah-yPp" firstAttribute="leading" secondItem="Xje-w9-ef0" secondAttribute="leading" constant="15" id="9h9-fx-hwS"/>
+                                    <constraint firstAttribute="trailing" secondItem="U9w-tJ-MhV" secondAttribute="trailing" constant="10" id="AEa-ko-RBo"/>
+                                    <constraint firstItem="paF-Vg-LR2" firstAttribute="top" secondItem="Xje-w9-ef0" secondAttribute="top" constant="80" id="JrC-rX-u9t"/>
+                                    <constraint firstItem="U9w-tJ-MhV" firstAttribute="leading" secondItem="Xje-w9-ef0" secondAttribute="leading" constant="10" id="NfE-kv-Ag4"/>
+                                    <constraint firstAttribute="trailing" secondItem="paF-Vg-LR2" secondAttribute="trailing" constant="20" id="QCT-xC-PEO"/>
+                                    <constraint firstItem="L16-Ah-yPp" firstAttribute="top" secondItem="bEr-Xp-4to" secondAttribute="bottom" constant="20" id="nef-kr-Hae"/>
+                                    <constraint firstAttribute="trailing" secondItem="bEr-Xp-4to" secondAttribute="trailing" constant="20" id="vao-MN-NdP"/>
+                                    <constraint firstItem="L16-Ah-yPp" firstAttribute="centerX" secondItem="Xje-w9-ef0" secondAttribute="centerX" id="ziQ-LD-lXw"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" red="0.94509803920000002" green="0.92549019610000005" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Xje-w9-ef0" secondAttribute="bottom" id="2sR-ro-vDO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Xje-w9-ef0" secondAttribute="trailing" id="IvT-7J-ofe"/>
+                            <constraint firstItem="Xje-w9-ef0" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="TJS-2D-nDb"/>
+                            <constraint firstItem="Xje-w9-ef0" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="cuP-Rv-bmE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="privacyBtn" destination="bEr-Xp-4to" id="a0F-M6-EiE"/>
+                        <outlet property="titleLable1" destination="paF-Vg-LR2" id="h5K-uq-NT8"/>
+                        <outlet property="titleLable2" destination="xrS-Pz-Pli" id="MzO-nP-8FK"/>
+                        <outlet property="titleLable3" destination="L16-Ah-yPp" id="er9-fW-YpR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="-2"/>
+        </scene>
+    </scenes>
+</document>

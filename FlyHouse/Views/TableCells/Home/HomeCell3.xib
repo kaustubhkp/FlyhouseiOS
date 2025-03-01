@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell3" id="KGk-i7-Jjw" customClass="HomeCell3" customModule="FlyHouse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ArB-Qy-M70">
+                        <rect key="frame" x="15" y="5" width="290" height="45"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wp2-Pz-a7R">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="One Way">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="typeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="g9a-Sb-grR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irb-bP-8ZK">
+                                <rect key="frame" x="100" y="0.0" width="90" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Round Trip">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="typeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HB2-fl-ePv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDq-lZ-ZAO">
+                                <rect key="frame" x="200" y="0.0" width="90" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Multi City">
+                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="typeButtonClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="6lr-Ww-lHt"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="1gQ-Kb-NBd"/>
+                            <constraint firstItem="Wp2-Pz-a7R" firstAttribute="width" secondItem="Irb-bP-8ZK" secondAttribute="width" id="DbT-kc-WJd"/>
+                            <constraint firstItem="Irb-bP-8ZK" firstAttribute="width" secondItem="oDq-lZ-ZAO" secondAttribute="width" id="GrE-Zr-UB4"/>
+                            <constraint firstAttribute="bottom" secondItem="Irb-bP-8ZK" secondAttribute="bottom" id="Ogh-l1-l8q"/>
+                            <constraint firstAttribute="trailing" secondItem="oDq-lZ-ZAO" secondAttribute="trailing" id="Pvo-yg-DfO"/>
+                            <constraint firstItem="Irb-bP-8ZK" firstAttribute="top" secondItem="ArB-Qy-M70" secondAttribute="top" id="Yvt-fM-3Vn"/>
+                            <constraint firstItem="Wp2-Pz-a7R" firstAttribute="leading" secondItem="ArB-Qy-M70" secondAttribute="leading" id="ZDt-l5-4t0"/>
+                            <constraint firstItem="Wp2-Pz-a7R" firstAttribute="top" secondItem="ArB-Qy-M70" secondAttribute="top" id="dIN-kd-55w"/>
+                            <constraint firstAttribute="bottom" secondItem="Wp2-Pz-a7R" secondAttribute="bottom" id="fhL-G6-fcE"/>
+                            <constraint firstItem="oDq-lZ-ZAO" firstAttribute="top" secondItem="ArB-Qy-M70" secondAttribute="top" id="gKR-gO-lfQ"/>
+                            <constraint firstItem="Irb-bP-8ZK" firstAttribute="leading" secondItem="Wp2-Pz-a7R" secondAttribute="trailing" constant="10" id="ibA-qU-C35"/>
+                            <constraint firstAttribute="bottom" secondItem="oDq-lZ-ZAO" secondAttribute="bottom" id="kzJ-gJ-beO"/>
+                            <constraint firstItem="oDq-lZ-ZAO" firstAttribute="leading" secondItem="Irb-bP-8ZK" secondAttribute="trailing" constant="10" id="xoa-8P-wpZ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="ArB-Qy-M70" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Ldf-aX-jAm"/>
+                    <constraint firstItem="ArB-Qy-M70" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="qRv-GH-hKY"/>
+                    <constraint firstAttribute="trailing" secondItem="ArB-Qy-M70" secondAttribute="trailing" constant="15" id="s5V-ix-7PV"/>
+                    <constraint firstAttribute="bottom" secondItem="ArB-Qy-M70" secondAttribute="bottom" constant="5" id="u3K-PE-DXr"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="multiCityBtn" destination="oDq-lZ-ZAO" id="xZT-sl-jkM"/>
+                <outlet property="onewayBtn" destination="Wp2-Pz-a7R" id="5re-fv-nbz"/>
+                <outlet property="roundTripBtn" destination="Irb-bP-8ZK" id="nEN-Hn-BAh"/>
+                <outletCollection property="buttonArr" destination="oDq-lZ-ZAO" collectionClass="NSMutableArray" id="tGa-3y-IgW"/>
+                <outletCollection property="buttonArr" destination="Irb-bP-8ZK" collectionClass="NSMutableArray" id="fNz-tb-vsp"/>
+                <outletCollection property="buttonArr" destination="Wp2-Pz-a7R" collectionClass="NSMutableArray" id="HcX-pM-qyc"/>
+            </connections>
+            <point key="canvasLocation" x="148" y="11"/>
+        </tableViewCell>
+    </objects>
+</document>

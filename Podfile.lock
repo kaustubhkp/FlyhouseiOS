@@ -1,0 +1,24 @@
+PODS:
+  - Alamofire (4.8.2)
+  - IQKeyboardManagerSwift (6.5.11)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.8.2)
+  - IQKeyboardManagerSwift
+  - Toast-Swift
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - IQKeyboardManagerSwift
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 55cbe9ce5fad7c228e66c7259d57165004d27284
+
+COCOAPODS: 1.14.3

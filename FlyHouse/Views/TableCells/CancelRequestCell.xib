@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CancelRequestCell" rowHeight="65" id="KGk-i7-Jjw" customClass="CancelRequestCell" customModule="FlyHouse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mq8-Wf-HEa">
+                        <rect key="frame" x="15" y="5" width="290" height="44"/>
+                        <color key="backgroundColor" red="1" green="0.81568627449999997" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="44" id="Zcn-HB-A28"/>
+                        </constraints>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" title="CANCEL REQUEST">
+                            <fontDescription key="titleFontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="cancelRequestBtnClicked:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="BKT-gT-24L"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="mq8-Wf-HEa" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="75y-li-Fe3"/>
+                    <constraint firstAttribute="trailing" secondItem="mq8-Wf-HEa" secondAttribute="trailing" constant="15" id="DBb-1F-6eK"/>
+                    <constraint firstAttribute="bottom" secondItem="mq8-Wf-HEa" secondAttribute="bottom" constant="5" id="MWQ-Ug-gA4"/>
+                    <constraint firstItem="mq8-Wf-HEa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="gko-6O-RGc"/>
+                    <constraint firstItem="mq8-Wf-HEa" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jCp-m1-C0A"/>
+                    <constraint firstItem="mq8-Wf-HEa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="vc7-7g-s79"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <connections>
+                <outlet property="cancelReqBtn" destination="mq8-Wf-HEa" id="1bn-eX-igD"/>
+            </connections>
+            <point key="canvasLocation" x="233.58778625954199" y="25"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressListCell" rowHeight="65" id="KGk-i7-Jjw" customClass="AddressListCell" customModule="FlyHouse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rRF-cv-CO2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UtP-fc-DtC">
+                                <rect key="frame" x="60" y="5" width="245" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="IRM" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8o-Tv-Hgi">
+                                        <rect key="frame" x="5" y="5" width="235" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Irma, Wisconsin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGX-t4-kmS">
+                                        <rect key="frame" x="5" y="30" width="235" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="United State" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KGL-qp-TLA">
+                                        <rect key="frame" x="0.0" y="44" width="245" height="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="C8o-Tv-Hgi" firstAttribute="top" secondItem="UtP-fc-DtC" secondAttribute="top" constant="5" id="2kK-oi-Epf"/>
+                                    <constraint firstItem="fGX-t4-kmS" firstAttribute="leading" secondItem="UtP-fc-DtC" secondAttribute="leading" constant="5" id="9CS-SP-WcE"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="KGL-qp-TLA" secondAttribute="bottom" id="Fvl-O8-vSR"/>
+                                    <constraint firstAttribute="trailing" secondItem="KGL-qp-TLA" secondAttribute="trailing" id="HhQ-Xy-zjj"/>
+                                    <constraint firstAttribute="trailing" secondItem="fGX-t4-kmS" secondAttribute="trailing" constant="5" id="IMQ-U0-khL"/>
+                                    <constraint firstItem="fGX-t4-kmS" firstAttribute="top" secondItem="C8o-Tv-Hgi" secondAttribute="bottom" constant="5" id="TAC-mA-lkU"/>
+                                    <constraint firstItem="C8o-Tv-Hgi" firstAttribute="leading" secondItem="UtP-fc-DtC" secondAttribute="leading" constant="5" id="TAV-x8-Kzf"/>
+                                    <constraint firstAttribute="trailing" secondItem="C8o-Tv-Hgi" secondAttribute="trailing" constant="5" id="Tsr-Ff-wzT"/>
+                                    <constraint firstItem="KGL-qp-TLA" firstAttribute="top" secondItem="fGX-t4-kmS" secondAttribute="bottom" id="kQN-TQ-Rwz"/>
+                                    <constraint firstItem="KGL-qp-TLA" firstAttribute="leading" secondItem="UtP-fc-DtC" secondAttribute="leading" id="oKD-8H-Hcd"/>
+                                </constraints>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mappin" translatesAutoresizingMaskIntoConstraints="NO" id="4cD-wc-c7J">
+                                <rect key="frame" x="15" y="22.666666666666671" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="4cD-wc-c7J" secondAttribute="height" multiplier="1:1" id="Dbh-dl-8qh"/>
+                                    <constraint firstAttribute="width" constant="30" id="XWv-17-IAK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="UtP-fc-DtC" secondAttribute="bottom" constant="5" id="6cY-O1-t0I"/>
+                            <constraint firstItem="4cD-wc-c7J" firstAttribute="centerY" secondItem="UtP-fc-DtC" secondAttribute="centerY" id="7Gy-xX-XeF"/>
+                            <constraint firstAttribute="trailing" secondItem="UtP-fc-DtC" secondAttribute="trailing" constant="15" id="8S6-L4-3D5"/>
+                            <constraint firstItem="UtP-fc-DtC" firstAttribute="top" secondItem="rRF-cv-CO2" secondAttribute="top" constant="5" id="H4n-hE-OPh"/>
+                            <constraint firstItem="UtP-fc-DtC" firstAttribute="leading" secondItem="4cD-wc-c7J" secondAttribute="trailing" constant="15" id="XEa-KY-qCg"/>
+                            <constraint firstItem="UtP-fc-DtC" firstAttribute="leading" secondItem="rRF-cv-CO2" secondAttribute="leading" constant="60" id="ud9-Ud-7ye"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="rRF-cv-CO2" secondAttribute="bottom" id="LCY-nd-x35"/>
+                    <constraint firstAttribute="trailing" secondItem="rRF-cv-CO2" secondAttribute="trailing" id="YGU-0F-XNx"/>
+                    <constraint firstItem="rRF-cv-CO2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="i9j-Gf-BfI"/>
+                    <constraint firstItem="rRF-cv-CO2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="nQJ-Yj-3aR"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <connections>
+                <outlet property="addressLabel1" destination="C8o-Tv-Hgi" id="2kV-tN-xKX"/>
+                <outlet property="addressLabel2" destination="fGX-t4-kmS" id="yii-Rg-slL"/>
+                <outlet property="addressLabel3" destination="KGL-qp-TLA" id="Yai-cj-f5P"/>
+                <outlet property="imageV" destination="4cD-wc-c7J" id="ehF-PU-XVx"/>
+            </connections>
+            <point key="canvasLocation" x="100.76335877862596" y="27.816901408450704"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="mappin" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
+</document>

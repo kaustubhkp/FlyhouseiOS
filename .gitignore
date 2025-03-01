@@ -1,0 +1,47 @@
+# --- macOS System Files ---
+.DS_Store
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# --- Xcode ---
+DerivedData/
+.idea/
+xcuserdata/
+*.xcworkspace
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+!default.mode1v3
+!default.pbxuser
+
+# --- Swift Package Manager (SPM) ---
+/.swiftpm/
+/Packages/
+/package.resolved
+
+# --- CocoaPods ---
+/Pods/
+/Podfile.lock
+
+# --- Carthage ---
+/Carthage/
+
+# --- Fastlane ---
+/fastlane/report.xml
+/fastlane/Preview.html
+/fastlane/screenshots/
+/fastlane/test_output/
+/fastlane/report.json
+
+# --- Archives & Build Artifacts ---
+*.xcarchive
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.app
+
+# --- Temporary & Logs ---
+*.log
+*.tmp

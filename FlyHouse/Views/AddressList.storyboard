@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Address ListVC-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="AddressListVC" id="Y6W-OH-hqX" customClass="AddressListVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="qme-d5-GOY">
+                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="1WI-Us-wP3">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </searchBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qme-d5-GOY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="BwZ-2p-00a"/>
+                            <constraint firstItem="1WI-Us-wP3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Fse-aB-zyM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="qme-d5-GOY" secondAttribute="bottom" id="Mth-Nm-hVs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="qme-d5-GOY" secondAttribute="trailing" id="Nx4-CL-ory"/>
+                            <constraint firstItem="qme-d5-GOY" firstAttribute="top" secondItem="1WI-Us-wP3" secondAttribute="bottom" id="YPP-9U-Qxw"/>
+                            <constraint firstItem="1WI-Us-wP3" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="gdb-sn-Gr2"/>
+                            <constraint firstItem="1WI-Us-wP3" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="hbt-Ig-uz6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="addressTableView" destination="qme-d5-GOY" id="nMA-x7-Vgt"/>
+                        <outlet property="searchBar" destination="1WI-Us-wP3" id="HXG-xO-3ff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="-2"/>
+        </scene>
+        <!--Aircraft ListVC-->
+        <scene sceneID="WlA-vN-b1E">
+            <objects>
+                <viewController storyboardIdentifier="AircraftListVC" id="skQ-5F-vix" customClass="AircraftListVC" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gbb-Bj-FuL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ncO-wJ-jhC">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t5a-az-sWf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="t5a-az-sWf" firstAttribute="bottom" secondItem="ncO-wJ-jhC" secondAttribute="bottom" id="0lE-3N-A1G"/>
+                            <constraint firstItem="ncO-wJ-jhC" firstAttribute="leading" secondItem="gbb-Bj-FuL" secondAttribute="leading" id="GNQ-FE-MJY"/>
+                            <constraint firstItem="ncO-wJ-jhC" firstAttribute="top" secondItem="gbb-Bj-FuL" secondAttribute="top" id="Pa6-wJ-mdH"/>
+                            <constraint firstItem="t5a-az-sWf" firstAttribute="trailing" secondItem="ncO-wJ-jhC" secondAttribute="trailing" id="t9p-3D-TQN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="aircraftTableView" destination="ncO-wJ-jhC" id="Ehq-dw-tRQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzD-1F-Qcl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="731" y="-4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

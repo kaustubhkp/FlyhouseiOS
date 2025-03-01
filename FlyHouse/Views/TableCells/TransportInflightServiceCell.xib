@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TransportInflightServiceCell" rowHeight="136" id="KGk-i7-Jjw" customClass="TransportInflightServiceCell" customModule="FlyHouse" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="120"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pGx-hc-qUL">
+                        <rect key="frame" x="10" y="5" width="300" height="110"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uk3-lN-5Ky" userLabel="DetailView">
+                                <rect key="frame" x="10" y="5" width="280" height="105"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fVt-Q6-w1C">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="105"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqU-EH-xJQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Ground Transportation?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fCT-JS-Hf7">
+                                                        <rect key="frame" x="10" y="10" width="201" height="24"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-gP-dnd">
+                                                        <rect key="frame" x="221" y="6.6666666666666679" width="51" height="31.000000000000004"/>
+                                                        <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="transportSwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="c0f-zx-uSH"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.94509803920000002" green="0.92549019610000005" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="fCT-JS-Hf7" firstAttribute="leading" secondItem="dqU-EH-xJQ" secondAttribute="leading" constant="10" id="8K5-ab-DWa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fCT-JS-Hf7" secondAttribute="bottom" constant="10" id="Gy1-lY-6hf"/>
+                                                    <constraint firstItem="gxd-gP-dnd" firstAttribute="leading" secondItem="fCT-JS-Hf7" secondAttribute="trailing" constant="10" id="VdC-bd-12b"/>
+                                                    <constraint firstItem="gxd-gP-dnd" firstAttribute="centerY" secondItem="fCT-JS-Hf7" secondAttribute="centerY" id="tMw-cx-7pB"/>
+                                                    <constraint firstAttribute="trailing" secondItem="gxd-gP-dnd" secondAttribute="trailing" constant="10" id="uFa-lT-Ip6"/>
+                                                    <constraint firstItem="fCT-JS-Hf7" firstAttribute="top" secondItem="dqU-EH-xJQ" secondAttribute="top" constant="10" id="vk4-NE-WMJ"/>
+                                                    <constraint firstAttribute="height" constant="44" id="vwk-vc-LaE"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tJq-CT-noz">
+                                                <rect key="frame" x="0.0" y="54" width="280" height="44"/>
+                                                <subviews>
+                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Inflight Services?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rlg-QW-LfC">
+                                                        <rect key="frame" x="10" y="10" width="141.66666666666666" height="24"/>
+                                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-iK-1Ek">
+                                                        <rect key="frame" x="221" y="6.6666666666666714" width="51" height="31"/>
+                                                        <color key="onTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="inflightSwitchValueChanged:" destination="KGk-i7-Jjw" eventType="valueChanged" id="TvT-5c-pyi"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.94509803920000002" green="0.92549019610000005" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="rlg-QW-LfC" secondAttribute="bottom" constant="10" id="5cb-aG-RZf"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ghL-iK-1Ek" secondAttribute="trailing" constant="10" id="M06-2M-I29"/>
+                                                    <constraint firstAttribute="height" constant="44" id="QBR-7e-cOr"/>
+                                                    <constraint firstItem="rlg-QW-LfC" firstAttribute="top" secondItem="tJq-CT-noz" secondAttribute="top" constant="10" id="UyM-Ze-fjo"/>
+                                                    <constraint firstItem="ghL-iK-1Ek" firstAttribute="centerY" secondItem="rlg-QW-LfC" secondAttribute="centerY" id="nle-rZ-hXo"/>
+                                                    <constraint firstItem="rlg-QW-LfC" firstAttribute="leading" secondItem="tJq-CT-noz" secondAttribute="leading" constant="10" id="tC1-H6-ub8"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tJq-CT-noz" secondAttribute="bottom" constant="5" id="5mY-g9-6GY"/>
+                                            <constraint firstItem="tJq-CT-noz" firstAttribute="top" secondItem="dqU-EH-xJQ" secondAttribute="bottom" constant="10" id="8rk-R6-THr"/>
+                                            <constraint firstItem="dqU-EH-xJQ" firstAttribute="leading" secondItem="fVt-Q6-w1C" secondAttribute="leading" id="BAd-3r-NEi"/>
+                                            <constraint firstItem="tJq-CT-noz" firstAttribute="leading" secondItem="dqU-EH-xJQ" secondAttribute="leading" id="Lmr-As-EcJ"/>
+                                            <constraint firstItem="dqU-EH-xJQ" firstAttribute="top" secondItem="fVt-Q6-w1C" secondAttribute="top" id="cGy-hP-zHK"/>
+                                            <constraint firstItem="tJq-CT-noz" firstAttribute="trailing" secondItem="dqU-EH-xJQ" secondAttribute="trailing" id="lqd-ZK-REz"/>
+                                            <constraint firstItem="tJq-CT-noz" firstAttribute="top" secondItem="dqU-EH-xJQ" secondAttribute="bottom" constant="10" id="mTC-UK-8ZP"/>
+                                            <constraint firstAttribute="trailing" secondItem="dqU-EH-xJQ" secondAttribute="trailing" id="wFq-AJ-ydA"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="fVt-Q6-w1C" firstAttribute="top" secondItem="uk3-lN-5Ky" secondAttribute="top" id="0pM-32-2es"/>
+                                    <constraint firstItem="fVt-Q6-w1C" firstAttribute="leading" secondItem="uk3-lN-5Ky" secondAttribute="leading" id="iUZ-1D-eZV"/>
+                                    <constraint firstAttribute="trailing" secondItem="fVt-Q6-w1C" secondAttribute="trailing" id="pOd-gY-1Dh"/>
+                                    <constraint firstAttribute="bottom" secondItem="fVt-Q6-w1C" secondAttribute="bottom" id="zZy-OO-O4u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uk3-lN-5Ky" firstAttribute="top" secondItem="pGx-hc-qUL" secondAttribute="top" constant="5" id="2mm-Ub-Wd6"/>
+                            <constraint firstAttribute="trailing" secondItem="uk3-lN-5Ky" secondAttribute="trailing" constant="10" id="75M-O7-00H"/>
+                            <constraint firstItem="uk3-lN-5Ky" firstAttribute="leading" secondItem="pGx-hc-qUL" secondAttribute="leading" constant="10" id="BYS-wR-Xv9"/>
+                            <constraint firstAttribute="bottom" secondItem="uk3-lN-5Ky" secondAttribute="bottom" id="Bix-M6-MXO"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="pGx-hc-qUL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="DDM-vd-fSV"/>
+                    <constraint firstItem="pGx-hc-qUL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="LR7-4m-ZMQ"/>
+                    <constraint firstAttribute="bottom" secondItem="pGx-hc-qUL" secondAttribute="bottom" constant="5" id="RrT-X3-LhX"/>
+                    <constraint firstAttribute="trailing" secondItem="pGx-hc-qUL" secondAttribute="trailing" constant="10" id="UzN-79-rei"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" red="0.91764705879999997" green="0.8980392157" blue="0.87843137250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <connections>
+                <outlet property="InflightServiceTF" destination="rlg-QW-LfC" id="lNo-dD-zqZ"/>
+                <outlet property="inflightServiceSwitch" destination="ghL-iK-1Ek" id="fkf-0H-fsh"/>
+                <outlet property="transportationNeedTF" destination="fCT-JS-Hf7" id="Q0Q-PS-8rP"/>
+                <outlet property="transportationSwitch" destination="gxd-gP-dnd" id="fKf-b9-akU"/>
+            </connections>
+            <point key="canvasLocation" x="253.43511450381678" y="-33.098591549295776"/>
+        </tableViewCell>
+    </objects>
+</document>
