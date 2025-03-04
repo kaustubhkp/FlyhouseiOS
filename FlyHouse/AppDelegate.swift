@@ -7,6 +7,9 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,14 +21,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         sleep(2)
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.toolbarTintColor = UIColor.black
+        IQKeyboardManager.shared.toolbarConfiguration.tintColor = UIColor.black
         if UserDefaults.standard.bool(forKey: "isUserVerified"){
             //self.createMenuView()
             self.setHomeToRootViewController()
         }
         
         //self.APICheckVersionCall()
+        
+        // 1. Configure Firebase in the app
+        FirebaseApp.configure()
+                
+        // 2. Request notification permissions
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            }
+        }
+
+        // 3. Set the FCM delegate to handle incoming messages
+        Messaging.messaging().delegate = self
+
         return true
+    }
+    
+    // 4. Handle device token for push notifications
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+
+    // 5. Handle errors for remote notification registration
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Failed to register for remote notifications: \(error.localizedDescription)")
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -91,6 +120,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Error:\(error.localizedDescription)")
         }
     }
+    
+ 
     
     func setHomeToRootViewController(){
         
@@ -162,3 +193,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: - MessagingDelegate
+extension AppDelegate: MessagingDelegate {
+    // Called when the app receives a push notification while the app is in the foreground
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        print("FCM token: \(fcmToken ?? "")")
+        
+        UserDefaults.standard.set(fcmToken, forKey: "fcmTokenStr")
+        UserDefaults.standard.synchronize()
+        // You can now send the FCM token to your server to send push notifications
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    // Handle notification received when the app is in the foreground
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // Display the notification even when the app is in the foreground
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    // Handle user interaction with the notification (e.g., tapping the notification)
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // Process the notification
+        print("User tapped the notification: \(response.notification.request.content.userInfo)")
+        completionHandler()
+    }
+}

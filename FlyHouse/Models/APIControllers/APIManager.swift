@@ -5,6 +5,22 @@
 import Foundation
 import Alamofire
 
+struct AppNotificationTokenResponse : Codable{
+    var task:String?
+    var result:String?
+    var description:String?
+    var data:[AircraftsData]?
+    var title:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case task
+        case result
+        case description
+        case data
+        case title
+    }
+}
+
 class APIManager{
     
     static let shared = APIManager()
@@ -907,6 +923,26 @@ class APIPayment {
         AlmofireAPIManager.GetRequest(url: urlStr,headers: headers) { response in
             success(response)
         } failure: { error in
+            fail(error)
+        }
+    }
+}
+
+class APIAddEditAppNotificationToken {
+    
+    static let shared = APIAddEditAppNotificationToken()
+    
+    func saveAppNotificationToken(urlStr:String,param:[String:Any],success:@escaping(AppNotificationTokenResponse)-> Void,fail:@escaping(_ error: NSError)-> Void){
+        
+        var headers:HTTPHeaders!
+        if UserDefaults.standard.value(forKey: "Authorization") != nil{
+            let data = UserDefaults.standard.value(forKey: "Authorization") as! String
+            headers = ["Authorization":data] as [String:String]
+        }
+    
+        APIManager.shared.observerModel(url: urlStr, parameters: param, headers: headers) { response in
+            success(response)
+        } fail: { error in
             fail(error)
         }
     }

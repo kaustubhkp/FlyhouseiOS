@@ -998,6 +998,43 @@ class RequestVC: NavigationBarView,Storyboardable {
         }
     }
     
+    func APICallPN(){
+        
+        let urlStr = String(format: "%@/UserDevice/AddEditAppNotificationToken", APIUrl.baseUrl)
+        let deviceModel = UIDevice.current.model
+        let deviceManufacturer = "Apple"
+        let device = "\(deviceModel) \(deviceManufacturer)"
+
+        var deviceIDString = ""
+        if let uuidStr = UIDevice.current.identifierForVendor?.uuidString {
+            deviceIDString = uuidStr
+            print("iOS ID: \(deviceIDString)")
+        }
+        
+        var userIdStr = 0
+        if UserDefaults.standard.value(forKey: "UserLoginUserId") != nil{
+            userIdStr = (UserDefaults.standard.value(forKey: "UserLoginUserId") as! Int)
+        }
+        
+        var fmctoken = ""
+        if UserDefaults.standard.value(forKey: "fcmTokenStr") != nil{
+            fmctoken = (UserDefaults.standard.value(forKey: "fcmTokenStr") as! String)
+        }
+        
+        let param: [String: Any] = ["deviceToken":fmctoken,
+                                    "id":0,
+                                    "deviceOS":device,
+                                    "deviceId":deviceIDString,
+                                    "userId":userIdStr]
+        
+        APIAddEditAppNotificationToken.shared.saveAppNotificationToken(urlStr: urlStr, param: param) { response in
+            //
+            
+        } fail: { error in
+            //
+        }
+    }
+    
     @IBAction func submitBtnClicked(_ sender : UIButton){
         
         self.view.endEditing(true)

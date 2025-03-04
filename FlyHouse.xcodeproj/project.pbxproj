@@ -120,7 +120,6 @@
 		1CE8BBBE2AA7505200AFFB66 /* RequestListDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8BBBD2AA7505100AFFB66 /* RequestListDetailVC.swift */; };
 		1CF4D1422B6EB72300E78F84 /* InstantBookVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CF4D1412B6EB72300E78F84 /* InstantBookVC.swift */; };
 		1CF4D1462B6EB7D700E78F84 /* InstantBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CF4D1452B6EB7D700E78F84 /* InstantBook.storyboard */; };
-		58F46A47DC5EB1B8398FAB1D /* Pods_FlyHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAB1C3BEEEA18EDF2911E079 /* Pods_FlyHouse.framework */; };
 		B728EDA52D3D7CBE0064748C /* Outfit-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B728EDA22D3D7CBE0064748C /* Outfit-Regular.ttf */; };
 		B728EDA62D3D7CBE0064748C /* Outfit-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B728ED9D2D3D7CBE0064748C /* Outfit-Bold.ttf */; };
 		B728EDA72D3D7CBE0064748C /* Outfit-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B728EDA32D3D7CBE0064748C /* Outfit-SemiBold.ttf */; };
@@ -157,6 +156,7 @@
 		B79E862E2D42D0C500D3EC12 /* EnhanceTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79E862D2D42D0C500D3EC12 /* EnhanceTblCell.xib */; };
 		B79E862F2D42D0C500D3EC12 /* EnhanceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E862C2D42D0C500D3EC12 /* EnhanceTblCell.swift */; };
 		C5E9262F2A5F34DE005400AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E9262E2A5F34DE005400AE /* GoogleService-Info.plist */; };
+		EFFC1CA0A187D782ACFE8370 /* Pods_FlyHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810B36EFDE697D6C1ABD6700 /* Pods_FlyHouse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -276,8 +276,7 @@
 		1CE8BBBD2AA7505100AFFB66 /* RequestListDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestListDetailVC.swift; sourceTree = "<group>"; };
 		1CF4D1412B6EB72300E78F84 /* InstantBookVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantBookVC.swift; sourceTree = "<group>"; };
 		1CF4D1452B6EB7D700E78F84 /* InstantBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InstantBook.storyboard; sourceTree = "<group>"; };
-		37484C11403AE6FF00C1A7D0 /* Pods-FlyHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.release.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.release.xcconfig"; sourceTree = "<group>"; };
-		4CDA449C709E3822F1E4BF74 /* Pods-FlyHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.debug.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.debug.xcconfig"; sourceTree = "<group>"; };
+		810B36EFDE697D6C1ABD6700 /* Pods_FlyHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B728ED9C2D3D7CBE0064748C /* Outfit-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Black.ttf"; sourceTree = "<group>"; };
 		B728ED9D2D3D7CBE0064748C /* Outfit-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-Bold.ttf"; sourceTree = "<group>"; };
 		B728ED9E2D3D7CBE0064748C /* Outfit-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Outfit-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -313,8 +312,10 @@
 		B791904F2D416A6B0007A037 /* RequestListDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestListDetailCell.xib; sourceTree = "<group>"; };
 		B79E862C2D42D0C500D3EC12 /* EnhanceTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhanceTblCell.swift; sourceTree = "<group>"; };
 		B79E862D2D42D0C500D3EC12 /* EnhanceTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnhanceTblCell.xib; sourceTree = "<group>"; };
+		B7EFEC2D2D776F2A00271078 /* FlyHouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlyHouse.entitlements; sourceTree = "<group>"; };
 		C5E9262E2A5F34DE005400AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FlyHouse/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		DAB1C3BEEEA18EDF2911E079 /* Pods_FlyHouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlyHouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F08911066EE54BE521023DE7 /* Pods-FlyHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.release.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.release.xcconfig"; sourceTree = "<group>"; };
+		F76322A8790FDF8849AFFDCD /* Pods-FlyHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.debug.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,7 +323,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58F46A47DC5EB1B8398FAB1D /* Pods_FlyHouse.framework in Frameworks */,
+				EFFC1CA0A187D782ACFE8370 /* Pods_FlyHouse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,7 +345,7 @@
 				1C2F5CAC2972F09D00993108 /* Products */,
 				C5E9262E2A5F34DE005400AE /* GoogleService-Info.plist */,
 				FCD7B43ADAC2EDE7D3758F41 /* Pods */,
-				67C1A516D6B4835C975E35BE /* Frameworks */,
+				715252E052276EFAD666C988 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -359,6 +360,7 @@
 		1C2F5CAD2972F09D00993108 /* FlyHouse */ = {
 			isa = PBXGroup;
 			children = (
+				B7EFEC2D2D776F2A00271078 /* FlyHouse.entitlements */,
 				1C7BE48129731906000F648D /* Resources */,
 				1C2F5CC32972F22B00993108 /* Models */,
 				1C2F5CC42972F23800993108 /* Views */,
@@ -609,10 +611,10 @@
 			path = TableCells;
 			sourceTree = "<group>";
 		};
-		67C1A516D6B4835C975E35BE /* Frameworks */ = {
+		715252E052276EFAD666C988 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DAB1C3BEEEA18EDF2911E079 /* Pods_FlyHouse.framework */,
+				810B36EFDE697D6C1ABD6700 /* Pods_FlyHouse.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -620,8 +622,8 @@
 		FCD7B43ADAC2EDE7D3758F41 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4CDA449C709E3822F1E4BF74 /* Pods-FlyHouse.debug.xcconfig */,
-				37484C11403AE6FF00C1A7D0 /* Pods-FlyHouse.release.xcconfig */,
+				F76322A8790FDF8849AFFDCD /* Pods-FlyHouse.debug.xcconfig */,
+				F08911066EE54BE521023DE7 /* Pods-FlyHouse.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -633,12 +635,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1C2F5CBF2972F0A100993108 /* Build configuration list for PBXNativeTarget "FlyHouse" */;
 			buildPhases = (
-				646DDAE3BB87CB7E9CB93711 /* [CP] Check Pods Manifest.lock */,
+				502998A4D9FC5A835FF551DA /* [CP] Check Pods Manifest.lock */,
 				1C2F5CA72972F09D00993108 /* Sources */,
 				1C2F5CA82972F09D00993108 /* Frameworks */,
 				1C2F5CA92972F09D00993108 /* Resources */,
-				7BF12875BD864D8428C02567 /* [CP] Embed Pods Frameworks */,
 				C5E9262D2A5F31FE005400AE /* ShellScript */,
+				90D2C1812E66B6A82E206812 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -758,9 +760,9 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		646DDAE3BB87CB7E9CB93711 /* [CP] Check Pods Manifest.lock */ = {
+		502998A4D9FC5A835FF551DA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -780,9 +782,9 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7BF12875BD864D8428C02567 /* [CP] Embed Pods Frameworks */ = {
+		90D2C1812E66B6A82E206812 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -1049,10 +1051,11 @@
 		};
 		1C2F5CC02972F0A100993108 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CDA449C709E3822F1E4BF74 /* Pods-FlyHouse.debug.xcconfig */;
+			baseConfigurationReference = F76322A8790FDF8849AFFDCD /* Pods-FlyHouse.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlyHouse/FlyHouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1085,10 +1088,11 @@
 		};
 		1C2F5CC12972F0A100993108 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 37484C11403AE6FF00C1A7D0 /* Pods-FlyHouse.release.xcconfig */;
+			baseConfigurationReference = F08911066EE54BE521023DE7 /* Pods-FlyHouse.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = FlyHouse/FlyHouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HVG7H6686;
