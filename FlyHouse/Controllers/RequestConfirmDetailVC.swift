@@ -1154,7 +1154,8 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
     @objc func updateTime(){
         
         if self.timeSecond > 0{
-            let time = printSecondsToHoursMinutesSeconds(seconds: timeSecond)
+            //let time = printSecondsToHoursMinutesSeconds(seconds: timeSecond)
+            let time = printSeconds(seconds: timeSecond)
             let timeStr = String(format: "%@",time)
             if timeSecond != 0{
                 self.timeStr = timeStr
@@ -1226,6 +1227,10 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
         time.append(String(format: "%02d", s))
         
         return time
+    }
+    
+    func printSeconds(seconds:Int)-> String {
+        return String(format: "%02d seconds", seconds)
     }
     
     func APICancelCharterRequestCall(){
@@ -1763,7 +1768,11 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.PastRequestTblCell, for: indexPath) as! PastRequestTblCell
             //cell.hideDetailView()
-            cell.showMiddlePlane()
+            if self.timeSecond != 0{
+                cell.updatePlanePosition()
+            }else{
+                cell.resetPlanePosition()
+            }
             cell.showDateTimeLable()
             if self.postResponseData != nil{
                 let data = self.postResponseData.crleg![indexPath.row]

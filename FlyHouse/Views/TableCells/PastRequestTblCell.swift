@@ -33,6 +33,8 @@ class PastRequestTblCell: UITableViewCell {
     @IBOutlet var topBorderViewToTopSuperview:NSLayoutConstraint!
     @IBOutlet var topBorderViewToDateLable:NSLayoutConstraint!
     
+    var timer: Timer?
+    var planePositionX: CGFloat = 0 // Initial position of the plane
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,7 +56,48 @@ class PastRequestTblCell: UITableViewCell {
         
     }
     
+    func resetPlanePosition() {
+        self.planImageViewToSuperviewMiddle.constant = 0
+    }
+    
+    func updatePlanePosition() {
+        // 4. Update the X position of the plane
+        
+        if planePositionX < 225{
+            planePositionX += 3 // Adjust the speed of movement
+        }
+        
+        if planePositionX >= 168 && planePositionX < 275 {
+            planePositionX += 4
+        }
+        
+        if planePositionX >= 275 && planePositionX <= 440{
+            planePositionX += 5
+        }
+        
+        // Move the plane to the new position
+        planImageview.frame.origin.x = planePositionX
+        
+        // 5. If the plane reaches the right side of the screen, stop the timer
+        print("Plan Position :\(planePositionX)")
+        print("End Position :\(self.frame.width)")
+        
+        if planePositionX > 342{
+            // Move the plane to the new position
+            planImageview.frame.origin.x = 175
+        }
+        
+    }
+    
     func showMiddlePlane(){
+        
+        self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
+        self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
+        self.planImageview.isHidden = false
+        self.d_routeRoundedView.isHidden = false
+    }
+    
+    func showPlaneWithTimerAnimation(){
         
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);

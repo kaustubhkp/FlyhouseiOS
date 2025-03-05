@@ -388,7 +388,7 @@ class CommonFunction: NSObject {
         }
     }
     
-    class func getDepartureTime() -> [String]{
+    /*class func getDepartureTime() -> [String]{
         
         var timeSlots = [String]()
         //timeSlots.append("TBD")
@@ -414,6 +414,43 @@ class CommonFunction: NSObject {
         }
         
         //print(timeSlots)
+        return timeSlots
+    }*/
+    
+    class func getDepartureTime() -> [String] {
+        var timeSlots = [String]()
+
+        // Start from 7:00 AM
+        timeSlots.append("7:00 AM")
+        timeSlots.append("7:30 AM")
+
+        // Add slots for the rest of the AM times
+        for i in 8...11 {
+            timeSlots.append("\(i):00 AM")
+            timeSlots.append("\(i):30 AM")
+        }
+
+        // Add the noon time slot
+        timeSlots.append("12:00 PM")
+        timeSlots.append("12:30 PM")
+
+        // Add slots for the PM times
+        for i in 1...11 {
+            timeSlots.append("\(i):00 PM")
+            timeSlots.append("\(i):30 PM")
+        }
+        
+        // Add the noon time slot
+        timeSlots.append("12:00 AM")
+        timeSlots.append("12:30 AM")
+        
+        // Add slots for the PM times
+        for i in 1...6 {
+            timeSlots.append("\(i):00 AM")
+            timeSlots.append("\(i):30 AM")
+        }
+
+        // Return the generated time slots
         return timeSlots
     }
     
