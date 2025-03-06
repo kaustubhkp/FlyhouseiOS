@@ -32,7 +32,7 @@ class ConfirmedCurrentReqVC: NavigationBarView,Storyboardable {
         
         confirmReqTable.register(UINib(nibName: TableCells.RequestListCell, bundle: nil), forCellReuseIdentifier: TableCells.RequestListCell)
         confirmReqTable.register(UINib(nibName: TableCells.PastRequestTblCell, bundle: nil), forCellReuseIdentifier: TableCells.PastRequestTblCell)
-       // confirmReqTable.register(UINib(nibName: TableCells.CancelRequestCell, bundle: nil), forCellReuseIdentifier: TableCells.CancelRequestCell)
+        confirmReqTable.register(UINib(nibName: TableCells.CongratulationCell, bundle: nil), forCellReuseIdentifier: TableCells.CongratulationCell)
         self.confirmReqTable.delegate = self
         self.confirmReqTable.dataSource = self
         CommonFunction.setBottomGradientShadowToView(vC: self)
@@ -112,15 +112,13 @@ extension ConfirmedCurrentReqVC : UITableViewDelegate, UITableViewDataSource{
         
         if indexPath.section == 0{
             
-            let cell = UITableViewCell()
+            let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.CongratulationCell, for: indexPath) as! CongratulationCell
             
             if indexPath.row == 0{
-                cell.textLabel!.text = "Congratulations on booking your flight. You will soon receive the booking documents and advance payment links in email from booking@goflyhouse.com"
-                cell.textLabel?.textAlignment = .left
-                cell.textLabel!.textColor = UIColor.darkGray
+                
+                cell.titleLabel!.text = "Congratulations!!!!!"
+                cell.subTitleLabel!.text = "You will soon receive the booking documents and advance payment links in email from booking@goflyhouse.com"
             }
-            CommonFunction.setLabelsFonts(lbls: [cell.textLabel!], type: .fReguler, size: 14)
-            cell.textLabel!.numberOfLines = 0
             cell.backgroundColor = UIColor.clear
             return cell
             

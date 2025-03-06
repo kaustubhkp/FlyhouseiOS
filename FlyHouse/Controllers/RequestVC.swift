@@ -212,6 +212,11 @@ class RequestVC: NavigationBarView,Storyboardable {
                 if response.data != nil{
                     let data = response.data!
                     
+                    if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+                        UserDefaults.standard.removeObject(forKey: "planAnimationLastPoint")
+                        UserDefaults.standard.synchronize()
+                    }
+                    
                     if data.modelState != nil {
                         if (data.modelState?.error!.count)! > 0{
                             let errorStr = data.modelState?.error![0]

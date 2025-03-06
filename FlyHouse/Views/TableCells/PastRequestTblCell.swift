@@ -26,6 +26,7 @@ class PastRequestTblCell: UITableViewCell {
     @IBOutlet weak var timeLabel:UILabel!
     @IBOutlet weak var dateLable:UILabel!
     
+    @IBOutlet var planImageViewToSuperviewLeading:NSLayoutConstraint!
     @IBOutlet var planImageViewToSuperviewTrailing:NSLayoutConstraint!
     @IBOutlet var planImageViewToSuperviewMiddle:NSLayoutConstraint!
     
@@ -40,6 +41,7 @@ class PastRequestTblCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
+        self.planImageview.isHidden = true
         self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         self.selectionStyle = .none
@@ -57,42 +59,47 @@ class PastRequestTblCell: UITableViewCell {
     }
     
     func resetPlanePosition() {
+        self.planImageview.isHidden = false
         self.planImageViewToSuperviewMiddle.constant = 0
     }
     
-    func updatePlanePosition() {
+    func animatePlane(sec:Int){
+    
+        UIView.animate(withDuration: 1.0, delay: 0, options: [.curveLinear], animations: {
+            // Move the plane image to the right
+            
+            if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+                self.planePositionX = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
+            }
+            self.planePositionX += 4
+            self.planImageview.frame.origin.x = self.planePositionX
+            UserDefaults.standard.set(self.planePositionX, forKey: "planAnimationLastPoint")
+            UserDefaults.standard.synchronize()
+            print("Plan Position:\(self.planImageview.frame.origin.x)")
+        }, completion: { finished in
+            if finished {
+                // Reset plane position and start the animation again for looping effect
+                self.resetPlanePosition()
+                self.planImageViewToSuperviewMiddle.constant = self.frame.width/2
+            }
+        })
+    }
+    
+    func updatePlanePosition(seconds:Int) {
         // 4. Update the X position of the plane
-        
-        if planePositionX < 225{
-            planePositionX += 3 // Adjust the speed of movement
+        if  self.planePositionX == 0{
+            if UserDefaults.standard.object(forKey: "planAnimationLastPoint") == nil {
+                self.resetPlanePosition()
+            }
         }
-        
-        if planePositionX >= 168 && planePositionX < 275 {
-            planePositionX += 4
-        }
-        
-        if planePositionX >= 275 && planePositionX <= 440{
-            planePositionX += 5
-        }
-        
-        // Move the plane to the new position
-        planImageview.frame.origin.x = planePositionX
-        
-        // 5. If the plane reaches the right side of the screen, stop the timer
-        print("Plan Position :\(planePositionX)")
-        print("End Position :\(self.frame.width)")
-        
-        if planePositionX > 342{
-            // Move the plane to the new position
-            planImageview.frame.origin.x = 175
-        }
-        
+        self.animatePlane(sec:seconds)
     }
     
     func showMiddlePlane(){
         
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
+        self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }
@@ -101,6 +108,7 @@ class PastRequestTblCell: UITableViewCell {
         
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
+        self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }
@@ -109,8 +117,18 @@ class PastRequestTblCell: UITableViewCell {
         
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 250)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 999);
+        self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = true
+    }
+    
+    func showLeftSidePlan(){
+        
+        self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 250)
+        self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
+        self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 999)
+        self.planImageview.isHidden = false
+        self.d_routeRoundedView.isHidden = false
     }
     
     func showDateTimeLable(){

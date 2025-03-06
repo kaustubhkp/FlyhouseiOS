@@ -155,6 +155,8 @@
 		B79190512D416A6B0007A037 /* RequestListDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B791904E2D416A6B0007A037 /* RequestListDetailCell.swift */; };
 		B79E862E2D42D0C500D3EC12 /* EnhanceTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B79E862D2D42D0C500D3EC12 /* EnhanceTblCell.xib */; };
 		B79E862F2D42D0C500D3EC12 /* EnhanceTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79E862C2D42D0C500D3EC12 /* EnhanceTblCell.swift */; };
+		B7EFEC302D7A322900271078 /* CongratulationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFEC2E2D7A322900271078 /* CongratulationCell.swift */; };
+		B7EFEC312D7A322900271078 /* CongratulationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B7EFEC2F2D7A322900271078 /* CongratulationCell.xib */; };
 		C5E9262F2A5F34DE005400AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C5E9262E2A5F34DE005400AE /* GoogleService-Info.plist */; };
 		EFFC1CA0A187D782ACFE8370 /* Pods_FlyHouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 810B36EFDE697D6C1ABD6700 /* Pods_FlyHouse.framework */; };
 /* End PBXBuildFile section */
@@ -313,6 +315,8 @@
 		B79E862C2D42D0C500D3EC12 /* EnhanceTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnhanceTblCell.swift; sourceTree = "<group>"; };
 		B79E862D2D42D0C500D3EC12 /* EnhanceTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnhanceTblCell.xib; sourceTree = "<group>"; };
 		B7EFEC2D2D776F2A00271078 /* FlyHouse.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlyHouse.entitlements; sourceTree = "<group>"; };
+		B7EFEC2E2D7A322900271078 /* CongratulationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationCell.swift; sourceTree = "<group>"; };
+		B7EFEC2F2D7A322900271078 /* CongratulationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CongratulationCell.xib; sourceTree = "<group>"; };
 		C5E9262E2A5F34DE005400AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "FlyHouse/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F08911066EE54BE521023DE7 /* Pods-FlyHouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.release.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.release.xcconfig"; sourceTree = "<group>"; };
 		F76322A8790FDF8849AFFDCD /* Pods-FlyHouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlyHouse.debug.xcconfig"; path = "Target Support Files/Pods-FlyHouse/Pods-FlyHouse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -607,6 +611,8 @@
 				B78CEB6F2D496CA0007F4BE9 /* RequestAcceptListCell.xib */,
 				B78CEB722D4BDDA3007F4BE9 /* legCollectionCell.swift */,
 				B78CEB732D4BDDA3007F4BE9 /* legCollectionCell.xib */,
+				B7EFEC2E2D7A322900271078 /* CongratulationCell.swift */,
+				B7EFEC2F2D7A322900271078 /* CongratulationCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -738,6 +744,7 @@
 				1C78427E2B7015E400FD3637 /* InstantBookViewCell.xib in Resources */,
 				1C80AACF2A66D3CD00770027 /* HeaderImageCell.xib in Resources */,
 				B791904C2D413D760007A037 /* PastRequestTblCell.xib in Resources */,
+				B7EFEC312D7A322900271078 /* CongratulationCell.xib in Resources */,
 				1C91947C2A2D2BE600F07BE9 /* RequestAcceptCell.xib in Resources */,
 				1CF4D1462B6EB7D700E78F84 /* InstantBook.storyboard in Resources */,
 				B78030882C80F45300946593 /* BestAndMoreOptionCell.xib in Resources */,
@@ -874,6 +881,7 @@
 				1C01C27E2BE7EA6700302B8B /* MyTripsDetailsVC.swift in Sources */,
 				B791904D2D413D760007A037 /* PastRequestTblCell.swift in Sources */,
 				1C77A2692974758700EF6DCC /* UIColor+CustomDefine.swift in Sources */,
+				B7EFEC302D7A322900271078 /* CongratulationCell.swift in Sources */,
 				1CD5ED6E2975D282006877B8 /* AircraftListVC.swift in Sources */,
 				1C7AB8E82B7403C3006DAD8F /* FlagListPopupVC.swift in Sources */,
 				B78030B72C83AED400946593 /* SubmitButtonCell.swift in Sources */,
@@ -1059,7 +1067,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 8HVG7H6686;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyHouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlyHouse;
@@ -1095,7 +1103,7 @@
 				CODE_SIGN_ENTITLEMENTS = FlyHouse/FlyHouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8HVG7H6686;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyHouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlyHouse;

@@ -87,6 +87,7 @@
                                 <constraints>
                                     <constraint firstItem="4DF-lf-XNW" firstAttribute="centerY" secondItem="qzL-zB-44w" secondAttribute="centerY" id="0xq-2b-kkl"/>
                                     <constraint firstItem="mWB-bv-WYq" firstAttribute="leading" secondItem="qzL-zB-44w" secondAttribute="leading" constant="5" id="4Vr-fd-p2h"/>
+                                    <constraint firstItem="dUv-v4-OAp" firstAttribute="leading" secondItem="AL6-Zo-uEs" secondAttribute="leading" priority="250" id="7DB-3X-1UG"/>
                                     <constraint firstItem="AL6-Zo-uEs" firstAttribute="centerY" secondItem="qzL-zB-44w" secondAttribute="centerY" id="BDw-rC-meT"/>
                                     <constraint firstAttribute="height" constant="32" id="DJg-1F-XIb"/>
                                     <constraint firstItem="AL6-Zo-uEs" firstAttribute="leading" secondItem="qzL-zB-44w" secondAttribute="leading" constant="5" id="KUP-en-0LE"/>
@@ -198,6 +199,7 @@
                 <outlet property="dottedBorderLable" destination="mWB-bv-WYq" id="p0B-Gi-T3h"/>
                 <outlet property="fromAddressLabel" destination="Hgk-1O-xHh" id="IfM-lg-QUh"/>
                 <outlet property="fromLabel" destination="4vd-Is-Anu" id="spR-3z-wbP"/>
+                <outlet property="planImageViewToSuperviewLeading" destination="7DB-3X-1UG" id="HJR-9J-LgQ"/>
                 <outlet property="planImageViewToSuperviewMiddle" destination="cUu-P8-eNp" id="asi-NG-aEG"/>
                 <outlet property="planImageViewToSuperviewTrailing" destination="ab4-Px-QOW" id="Iwa-A4-9OJ"/>
                 <outlet property="planImageview" destination="dUv-v4-OAp" id="GYT-hv-ExN"/>

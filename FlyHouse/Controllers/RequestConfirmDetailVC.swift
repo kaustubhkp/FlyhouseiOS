@@ -167,6 +167,13 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
             
             self.getReadyTimerAPI(id: self.chartererRequestID!)
             //self.getCharterdReqAuctionTime(id: self.chartererRequestID!)
+            
+            if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+                var point = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
+                point += 4
+                UserDefaults.standard.set(point, forKey: "planAnimationLastPoint")
+            }
+            
         }else{
             self.APIPostCOpenRequestCall()
         }
@@ -980,6 +987,12 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
                         
                         self.timeStr = ""
                         self.timeSecond = response.data!
+                        
+                        if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+                            let point = ((OFFER_TIME - self.timeSecond) * 4)
+                            UserDefaults.standard.set(point, forKey: "planAnimationLastPoint")
+                            UserDefaults.standard.synchronize()
+                        }
                         self.showTimer()
                         self.setTableDelegateAndDataSource()
 
@@ -1768,8 +1781,14 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
             
             let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.PastRequestTblCell, for: indexPath) as! PastRequestTblCell
             //cell.hideDetailView()
+            
+            if UserDefaults.standard.object(forKey: "planAnimationLastPoint") == nil {
+                cell.showLeftSidePlan()
+            }else{
+                cell.planImageview.isHidden = false
+            }
             if self.timeSecond != 0{
-                cell.updatePlanePosition()
+                cell.updatePlanePosition(seconds: self.timeSecond)
             }else{
                 cell.resetPlanePosition()
             }

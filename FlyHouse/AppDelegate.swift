@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //self.APICheckVersionCall()
         
         // 1. Configure Firebase in the app
+        Analytics.setAnalyticsCollectionEnabled(false)
         FirebaseApp.configure()
                 
         // 2. Request notification permissions
@@ -49,6 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // 4. Handle device token for push notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print(deviceToken.description)
         Messaging.messaging().apnsToken = deviceToken
     }
 

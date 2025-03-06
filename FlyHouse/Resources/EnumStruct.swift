@@ -62,6 +62,7 @@ struct TableCells{
     static let RequestListDetailCell = "RequestListDetailCell"
     static let EnhanceTblCell = "EnhanceTblCell"
     static let RequestAcceptListCell = "RequestAcceptListCell"
+    static let CongratulationCell = "CongratulationCell"
 }
 
 struct CollectionViewCells{
@@ -71,9 +72,9 @@ struct CollectionViewCells{
 
 struct APIUrl{
     //stage
-    static let baseUrl = "https://stage.apiv2.flyhouse.us/api"
+    //static let baseUrl = "https://stage.apiv2.flyhouse.us/api"
     //live
-    //static let baseUrl = "https://app-api.flyhouse.us/api"
+    static let baseUrl = "https://app-api.flyhouse.us/api"
     //"https://fhapi.sycamoresol.com/api"
     static let previewBaseURL = String(format: "%@/flyhousemobile", CommonFunction.getValueFromForKey(key: "aircraftpreviewbaseurl"))
     //"https://charter.flyhouse.us/flyhousemobile"
