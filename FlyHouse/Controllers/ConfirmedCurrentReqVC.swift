@@ -147,7 +147,7 @@ extension ConfirmedCurrentReqVC : UITableViewDelegate, UITableViewDataSource{
         }else{
             let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.CancelRequestCell, for: indexPath) as! CancelRequestCell
             
-            cell.cancelReqBtn.setTitle("PAST REQUESTS", for: .normal)
+            cell.cancelReqBtn.setTitle("Home", for: .normal)
             cell.delegate = self
             return cell
         }

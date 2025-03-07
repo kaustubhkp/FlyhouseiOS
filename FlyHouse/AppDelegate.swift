@@ -12,7 +12,7 @@ import FirebaseMessaging
 import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     var window: UIWindow?
     var tabIndex:Int! = 0
@@ -28,43 +28,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         //self.APICheckVersionCall()
-        
-        // 1. Configure Firebase in the app
-        Analytics.setAnalyticsCollectionEnabled(false)
         FirebaseApp.configure()
-                
-        // 2. Request notification permissions
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if granted {
-                DispatchQueue.main.async {
-                    application.registerForRemoteNotifications()
-                }
-            }
-        }
-
-        // 3. Set the FCM delegate to handle incoming messages
         Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        requestNotificationPermission()
 
         return true
     }
     
-    // 4. Handle device token for push notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print(deviceToken.description)
         Messaging.messaging().apnsToken = deviceToken
     }
 
-    // 5. Handle errors for remote notification registration
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Failed to register for remote notifications: \(error.localizedDescription)")
-    }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        //
-    }
-    
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        
+    func requestNotificationPermission() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    UIApplication.shared.registerForRemoteNotifications()
+                }
+            }
+        }
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -195,29 +179,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
-// MARK: - MessagingDelegate
 extension AppDelegate: MessagingDelegate {
-    // Called when the app receives a push notification while the app is in the foreground
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        print("FCM token: \(fcmToken ?? "")")
-        
+        print("FCM Token: \(fcmToken ?? "No token")")
         UserDefaults.standard.set(fcmToken, forKey: "fcmTokenStr")
         UserDefaults.standard.synchronize()
-        // You can now send the FCM token to your server to send push notifications
-    }
-}
-
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    // Handle notification received when the app is in the foreground
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        // Display the notification even when the app is in the foreground
-        completionHandler([.alert, .badge, .sound])
-    }
-
-    // Handle user interaction with the notification (e.g., tapping the notification)
-    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        // Process the notification
-        print("User tapped the notification: \(response.notification.request.content.userInfo)")
-        completionHandler()
     }
 }

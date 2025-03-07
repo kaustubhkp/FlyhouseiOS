@@ -90,6 +90,7 @@ class RequestVC: NavigationBarView,Storyboardable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        APICallPN()
         self.view.backgroundColor = UIColor.hexStringToUIColor(hex: THEME_COLOR_BG)
         super.showNavLogoImage()
         self.registerRequestTableCell()
