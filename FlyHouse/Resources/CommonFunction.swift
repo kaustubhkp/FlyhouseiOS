@@ -388,7 +388,7 @@ class CommonFunction: NSObject {
         }
     }
     
-    /*class func getDepartureTime() -> [String]{
+    class func getDepartureTime() -> [String]{
         
         var timeSlots = [String]()
         //timeSlots.append("TBD")
@@ -415,9 +415,9 @@ class CommonFunction: NSObject {
         
         //print(timeSlots)
         return timeSlots
-    }*/
+    }
     
-    class func getDepartureTime() -> [String] {
+    /*class func getDepartureTime() -> [String] {
         var timeSlots = [String]()
 
         // Start from 7:00 AM
@@ -452,7 +452,7 @@ class CommonFunction: NSObject {
 
         // Return the generated time slots
         return timeSlots
-    }
+    }*/
     
     class func getfontsList(){
         

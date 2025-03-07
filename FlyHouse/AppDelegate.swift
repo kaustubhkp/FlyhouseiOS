@@ -32,6 +32,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         requestNotificationPermission()
+        
+        let min: Double = 28875.0
+        let max: Double = 46750.0
+        let randomValue = String(format: "%.2f", Double.random(in: min...max))
+        
+        print("----------------------------")
+        print("Rendom value is:")
+        print(randomValue)
+        print("---------------------------")
 
         return true
     }
@@ -106,8 +115,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             print("Error:\(error.localizedDescription)")
         }
     }
-    
- 
     
     func setHomeToRootViewController(){
         

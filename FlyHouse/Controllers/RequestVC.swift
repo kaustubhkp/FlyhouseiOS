@@ -215,6 +215,8 @@ class RequestVC: NavigationBarView,Storyboardable {
                     
                     if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
                         UserDefaults.standard.removeObject(forKey: "planAnimationLastPoint")
+                        UserDefaults.standard.removeObject(forKey: "distance")
+                        UserDefaults.standard.removeObject(forKey:"planAnimationSpeed")
                         UserDefaults.standard.synchronize()
                     }
                     

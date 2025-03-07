@@ -276,6 +276,8 @@ struct CharterReqData : Codable {
     var FinalAmount:Double?
     var LowestAmount:Double?
     var LowestPreferredAircraftType:String?
+    var MinBidPrice:Double?
+    var MaxBidPrice:Double?
     var Note:String?
     var OwnerAircraft:String?
     var OwnerAircraftID:Int?
@@ -345,6 +347,8 @@ struct CharterReqData : Codable {
         case FinalAmount
         case LowestAmount
         case LowestPreferredAircraftType
+        case MinBidPrice
+        case MaxBidPrice
         case Note
         case OwnerAircraft
         case OwnerAircraftID

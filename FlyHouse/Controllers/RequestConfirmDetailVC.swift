@@ -106,6 +106,9 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
     var totalRoutWayPathSections:Int! = 0
     var totalFlightAmt:Double! = 0.00
     
+    var minBidPrice:Double! = 0.0
+    var maxBidPrice:Double! = 0.0
+    
     @IBOutlet weak var cancelReqBtn:UIButton!
     
     override func viewDidLoad() {
@@ -342,6 +345,14 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
                 let postData = CharterreResponse(chartererRequestID: response.data?.ChartererRequestID!,distance: response.data?.Distance,endAirportID: response.data?.EndAirportID,endDateTime: response.data?.EndDateTime,note: response.data!.Note,paxCount: response.data?.PaxCount,paxSegment: response.data!.PaxSegment,preferredAircraftIDCSV: response.data?.PreferredAircraftIDCSV,priceExpectation: response.data!.PriceExpectation,startAirportID: response.data!.StartAirportID,startDateTime: response.data!.StartDateTime, startTime:response.data!.StartTime,status: response.data!.Status,requestTypeID: response.data!.RequestTypeID,requestTypeToUseID: response.data!.RequestTypeToUseID,estimatedTimeInMinute: response.data!.EstimatedTimeInMinute,crleg: cRleg)
                 
                 self.postResponseData = postData
+                
+                if response.data!.MinBidPrice != nil{
+                    self.minBidPrice = response.data!.MinBidPrice!
+                }
+                
+                if response.data!.MaxBidPrice != nil{
+                    self.maxBidPrice = response.data!.MaxBidPrice!
+                }
                 
                 if response.data!.OwnerMaxPaxCount != nil{
                     self.ownerMaxPaxCount = response.data?.OwnerMaxPaxCount
@@ -989,7 +1000,9 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
                         self.timeSecond = response.data!
                         
                         if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
-                            let point = ((OFFER_TIME - self.timeSecond) * 4)
+                            
+                            let speed = UserDefaults.standard.object(forKey: "planAnimationSpeed") as! CGFloat
+                            let point = ((CGFloat(OFFER_TIME) - CGFloat(self.timeSecond)) * speed)
                             UserDefaults.standard.set(point, forKey: "planAnimationLastPoint")
                             UserDefaults.standard.synchronize()
                         }
@@ -1175,8 +1188,11 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
                 
                 if callAPISeconds == 5{
                     self.callAPISeconds = 0
-                    //self.APIGetChartererRequestCall()
-                    self.APIGetCurrentBidPrice()
+                    
+                    let remdomAmt = Double.random(in: self.minBidPrice...self.maxBidPrice)
+                    let amount = CommonFunction.getCurrencyValue2(amt: Float(remdomAmt), code: CURRENCY_CODE)
+                    self.currentOfferPrice = amount
+                    //self.APIGetCurrentBidPrice()
                 }
                 self.requestConfDetailTable.reloadData()
                 self.callAPISeconds = self.callAPISeconds + 1
@@ -1790,7 +1806,12 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
             if self.timeSecond != 0{
                 cell.updatePlanePosition(seconds: self.timeSecond)
             }else{
-                cell.resetPlanePosition()
+                
+                if self.timeSecond == 0 && self.acceptTimeSecond != 0{
+                    cell.showMiddlePlane()
+                }else{
+                    cell.resetPlanePosition()
+                }
             }
             cell.showDateTimeLable()
             if self.postResponseData != nil{
