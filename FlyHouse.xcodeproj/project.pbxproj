@@ -1067,7 +1067,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 885X2Q6K25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyHouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlyHouse;
@@ -1083,7 +1083,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flyhouse.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpe.esarkarDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1103,7 +1103,7 @@
 				CODE_SIGN_ENTITLEMENTS = FlyHouse/FlyHouse.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 885X2Q6K25;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FlyHouse/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = FlyHouse;
@@ -1119,7 +1119,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 4.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.flyhouse.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hpe.esarkarDev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

@@ -1219,7 +1219,8 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
             if acceptTimeSecond != 0{
                 self.acceptTimerStr = timeStr
             }
-            self.requestConfDetailTable.reloadSections(IndexSet(integer: 1), with: .none)
+            self.requestConfDetailTable.reloadData()
+            //self.requestConfDetailTable.reloadSections(IndexSet(integer: 1), with: .none)
             self.acceptTimeSecond = self.acceptTimeSecond - 1
         }else{
             self.acceptTimerStr = "TIME UP!"

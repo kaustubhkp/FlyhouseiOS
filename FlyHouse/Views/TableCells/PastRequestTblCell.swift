@@ -45,7 +45,7 @@ class PastRequestTblCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         
-        self.planImageview.isHidden = true
+        //self.planImageview.isHidden = true
         self.contentView.backgroundColor = .clear
         self.backgroundColor = .clear
         self.selectionStyle = .none
@@ -169,6 +169,7 @@ class PastRequestTblCell: UITableViewCell {
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
         self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
+        self.planImageViewToStartPoint.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }
@@ -187,6 +188,7 @@ class PastRequestTblCell: UITableViewCell {
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 999)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
         self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
+        self.planImageViewToStartPoint.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }
@@ -196,6 +198,7 @@ class PastRequestTblCell: UITableViewCell {
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 250)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 999);
         self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
+        self.planImageViewToStartPoint.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = true
     }
@@ -205,6 +208,7 @@ class PastRequestTblCell: UITableViewCell {
         self.planImageViewToSuperviewMiddle.priority = UILayoutPriority(rawValue: 250)
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
         self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 999)
+        self.planImageViewToStartPoint.priority = UILayoutPriority(rawValue: 250)
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }
