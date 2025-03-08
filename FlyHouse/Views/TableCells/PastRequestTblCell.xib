@@ -212,7 +212,7 @@
                 <outlet property="topBorderViewToDateLable" destination="675-sx-PPf" id="Sck-Ml-mQj"/>
                 <outlet property="topBorderViewToTopSuperview" destination="f8i-Fl-stN" id="QWq-dh-S0t"/>
             </connections>
-            <point key="canvasLocation" x="223" y="-30"/>
+            <point key="canvasLocation" x="222.90076335877862" y="-30.281690140845072"/>
         </tableViewCell>
     </objects>
     <resources>

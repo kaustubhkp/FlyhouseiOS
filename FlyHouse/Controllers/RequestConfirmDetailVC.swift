@@ -1804,6 +1804,8 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
             }else{
                 cell.planImageview.isHidden = false
             }
+            
+            
             if self.timeSecond != 0{
                 cell.updatePlanePosition(seconds: self.timeSecond)
             }else{

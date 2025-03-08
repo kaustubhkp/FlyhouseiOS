@@ -23,32 +23,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D0DD86D8-6A83-4AEA-A321-8B4C81E79233"
+            uuid = "CE43B7AA-F7CB-4979-AC9D-26B78D922593"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlyHouse/Controllers/RequestConfirmDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1222"
-            endingLineNumber = "1222"
-            landmarkName = "updateAcceptTime()"
+            startingLineNumber = "1802"
+            endingLineNumber = "1802"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5525D2C3-B5C6-46E3-88A0-F49D803FAAFE"
+            uuid = "DA6FFD0C-B96D-499B-95B4-AD5161827045"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyHouse/Controllers/RequestConfirmDetailVC.swift"
+            filePath = "FlyHouse/Views/TableCells/PastRequestTblCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1796"
-            endingLineNumber = "1796"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "showMiddlePlane()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

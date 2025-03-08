@@ -170,6 +170,8 @@ class PastRequestTblCell: UITableViewCell {
         self.planImageViewToSuperviewTrailing.priority = UILayoutPriority(rawValue: 250);
         self.planImageViewToSuperviewLeading.priority = UILayoutPriority(rawValue: 250)
         self.planImageViewToStartPoint.priority = UILayoutPriority(rawValue: 250)
+        print(self.frame.width/2 - 40)
+        self.planImageview.frame.origin.x = self.frame.width/2 - 40
         self.planImageview.isHidden = false
         self.d_routeRoundedView.isHidden = false
     }

@@ -640,15 +640,15 @@ class CommonFunction: NSObject {
     
     class func getTitles() -> String{
         
-        return "Hi"
-//        let hour = Calendar.current.component(.hour, from: Date())
-//
-//        switch hour {
-//        case 6..<12 :  return NSLocalizedString("Good Morning", comment: "Good Morning")
-//        case 12..<17 : return NSLocalizedString("Good Afternoon", comment: "Good Afternoon")
-//        case 17..<19 : return NSLocalizedString("Good Evening", comment: "Good Evening")
-//        default: return NSLocalizedString("Good Night", comment: "Good Night")
-//        }
+        //return "Hi"
+        let hour = Calendar.current.component(.hour, from: Date())
+
+        switch hour {
+        case 6..<12 :  return NSLocalizedString("Good Morning", comment: "Good Morning")
+        case 12..<17 : return NSLocalizedString("Good Afternoon", comment: "Good Afternoon")
+        case 17..<19 : return NSLocalizedString("Good Evening", comment: "Good Evening")
+        default: return NSLocalizedString("Good Night", comment: "Good Night")
+        }
     }
     
     
