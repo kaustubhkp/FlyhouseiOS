@@ -132,6 +132,7 @@
 		B73842142C8A2A710075ACB9 /* SafetyRatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73842122C8A2A710075ACB9 /* SafetyRatingCell.swift */; };
 		B73842152C8A2A710075ACB9 /* SafetyRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73842132C8A2A710075ACB9 /* SafetyRatingCell.xib */; };
 		B73842192C8ABF560075ACB9 /* RatingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73842182C8ABF560075ACB9 /* RatingImageViewController.swift */; };
+		B744A4B62D80A7200043EAF9 /* INTRO_FLYHOUSE.mov in Resources */ = {isa = PBXBuildFile; fileRef = B744A4B52D80A7200043EAF9 /* INTRO_FLYHOUSE.mov */; };
 		B750AEB52D33B67F008FB40C /* HomeTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750AEB42D33B67A008FB40C /* HomeTabBarVC.swift */; };
 		B78030872C80F45300946593 /* BestAndMoreOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78030852C80F45300946593 /* BestAndMoreOptionCell.swift */; };
 		B78030882C80F45300946593 /* BestAndMoreOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78030862C80F45300946593 /* BestAndMoreOptionCell.xib */; };
@@ -291,6 +292,7 @@
 		B73842122C8A2A710075ACB9 /* SafetyRatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyRatingCell.swift; sourceTree = "<group>"; };
 		B73842132C8A2A710075ACB9 /* SafetyRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SafetyRatingCell.xib; sourceTree = "<group>"; };
 		B73842182C8ABF560075ACB9 /* RatingImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingImageViewController.swift; sourceTree = "<group>"; };
+		B744A4B52D80A7200043EAF9 /* INTRO_FLYHOUSE.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = INTRO_FLYHOUSE.mov; sourceTree = "<group>"; };
 		B750AEB42D33B67A008FB40C /* HomeTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarVC.swift; sourceTree = "<group>"; };
 		B78030852C80F45300946593 /* BestAndMoreOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestAndMoreOptionCell.swift; sourceTree = "<group>"; };
 		B78030862C80F45300946593 /* BestAndMoreOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestAndMoreOptionCell.xib; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 		1C2F5CAD2972F09D00993108 /* FlyHouse */ = {
 			isa = PBXGroup;
 			children = (
+				B744A4B52D80A7200043EAF9 /* INTRO_FLYHOUSE.mov */,
 				B7EFEC2D2D776F2A00271078 /* FlyHouse.entitlements */,
 				1C7BE48129731906000F648D /* Resources */,
 				1C2F5CC32972F22B00993108 /* Models */,
@@ -747,6 +750,7 @@
 				B7EFEC312D7A322900271078 /* CongratulationCell.xib in Resources */,
 				1C91947C2A2D2BE600F07BE9 /* RequestAcceptCell.xib in Resources */,
 				1CF4D1462B6EB7D700E78F84 /* InstantBook.storyboard in Resources */,
+				B744A4B62D80A7200043EAF9 /* INTRO_FLYHOUSE.mov in Resources */,
 				B78030882C80F45300946593 /* BestAndMoreOptionCell.xib in Resources */,
 				1C7AB8EC2B740538006DAD8F /* FlagListViewCell.xib in Resources */,
 				B728EDA52D3D7CBE0064748C /* Outfit-Regular.ttf in Resources */,

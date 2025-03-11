@@ -17,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBG" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-fK-JBx">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginBG" translatesAutoresizingMaskIntoConstraints="NO" id="TAI-fK-JBx">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMS-E2-K5A">
                                 <rect key="frame" x="0.0" y="48" width="414" height="542.5"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flyhouse_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-hh-2WE">
+                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flyhouse_logo" translatesAutoresizingMaskIntoConstraints="NO" id="8Yr-hh-2WE">
                                         <rect key="frame" x="83" y="363.5" width="248" height="76"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="76" id="nQz-Qx-wgq"/>
@@ -244,7 +244,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="flyhouse_logo" width="113.5" height="19"/>
+        <image name="flyhouse_logo" width="268" height="46"/>
         <image name="loginBG" width="196.5" height="426"/>
         <image name="user_icon" width="51" height="50"/>
         <systemColor name="labelColor">

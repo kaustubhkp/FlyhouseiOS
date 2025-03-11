@@ -740,10 +740,16 @@ extension RequestAcceptDetailVC : TransportInflightServiceCellDelegate{
     func APIUpdateCharterRequestAdditionalFieldsCall(){
         
         self.view.makeToastActivity(.center)
-        let parameters = ["chartererrequestid": self.charterReqId!,"istransportationneeded":transport.flagVal!,"isinflightserviceneeded":inflight.flagVal!, "Issplitpayment" : isSplit as Any] as [String: Any]
+        let parameters = ["chartererrequestid": self.charterReqId!,"istransportationneeded":transport.flagVal!,"isinflightserviceneeded":inflight.flagVal!, "Issplitpayment" : isSplit as Any,
+                        "cateringnotes":"testcateringnotes",
+                        "inflightservicenotes":"testinflightservice"] as [String: Any]
+        
+        /*
+         https://stage.apiv2.flyhouse.us/api/ChartererRequest/UpdateCharterRequestAdditionalFields?chartererrequestid=5081&istransportationneeded=1&isinflightserviceneeded=1&Issplitpayment=0&cateringnotes=testcateringnotes&inflightservicenotes=testinflightservice
+         */
         
         //finalcode
-        let urlStr = String(format: "%@/ChartererRequest/UpdateCharterRequestAdditionalFields?chartererrequestid=%d&istransportationneeded=%d&isinflightserviceneeded=%d", APIUrl.baseUrl,self.charterReqId!,transport.flagVal!,inflight.flagVal!)
+        let urlStr = String(format: "%@/ChartererRequest/UpdateCharterRequestAdditionalFields?chartererrequestid=%d&istransportationneeded=%d&isinflightserviceneeded=%d&cateringnotes=testcateringnotes&inflightservicenotes=testinflightservice", APIUrl.baseUrl,self.charterReqId!,transport.flagVal!,inflight.flagVal!)
         
         APIChartererRequest.shared.updateCharterRequestAdditionalFields(urlStr: urlStr, param: parameters) { response in
             

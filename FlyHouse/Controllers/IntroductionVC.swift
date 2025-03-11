@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVKit
+import AVFoundation
 
 class IntroductionVC: UIViewController,Storyboardable {
     static let storyboardName :StoryBoardName = .Main
@@ -18,6 +20,8 @@ class IntroductionVC: UIViewController,Storyboardable {
     @IBOutlet weak var arrowEmailImage:UIImageView!
     
     @IBOutlet var buttonArr:[UIButton]!
+    var playerLayer: AVPlayerLayer!
+    var player: AVPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +37,66 @@ class IntroductionVC: UIViewController,Storyboardable {
         
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.removeVideoBackground()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.setupVideoBackground()
         self.setupViewsControl()
         self.APIGetAllUrls()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
+    func setupVideoBackground() {
+        // Get the path to the .mov file (make sure the file is included in the project)
+        if let filePath = Bundle.main.path(forResource: "INTRO_FLYHOUSE", ofType: "mov") {
+            let fileURL = URL(fileURLWithPath: filePath)
+            
+            // Create an AVPlayer with the file URL
+            player = AVPlayer(url: fileURL)
+            
+            // Create an AVPlayerLayer to display the video
+            playerLayer = AVPlayerLayer(player: player)
+            
+            // Create AVPlayerLayer to display the video
+            playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = self.view.bounds
+            playerLayer.videoGravity = .resizeAspectFill  // Adjust video fill mode
+            self.view.layer.insertSublayer(playerLayer, at: 0)
+            
+            // Add the player layer to the view's layer
+            //self.view.layer.insertSublayer(playerLayer, at: 0)
+            // Add observer to loop video when it finishes
+            NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+            
+            // Play the video
+            player.play()
+        } else {
+            print("Video file not found")
+        }
+    }
+    
+    @objc func playerDidFinishPlaying(notification: Notification) {
+            // When the video finishes, seek to the beginning and play again
+            player.seek(to: CMTime.zero)
+            player.play()
+    }
+
+    deinit {
+            // Remove the observer when the view controller is deallocated
+            NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+    }
+    
+    func removeVideoBackground() {
+        playerLayer?.removeFromSuperlayer()
+        playerLayer = nil
     }
     
     func setupViewsControl(){
