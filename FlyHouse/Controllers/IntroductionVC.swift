@@ -90,11 +90,16 @@ class IntroductionVC: UIViewController,Storyboardable {
     }
 
     deinit {
+        
+        if player != nil {
             // Remove the observer when the view controller is deallocated
             NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: player.currentItem)
+        }
     }
     
     func removeVideoBackground() {
+        
+        if playerLayer == nil { return }
         playerLayer?.removeFromSuperlayer()
         playerLayer = nil
     }
