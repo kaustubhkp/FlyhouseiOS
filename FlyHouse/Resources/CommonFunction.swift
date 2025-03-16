@@ -614,10 +614,10 @@ class CommonFunction: NSObject {
         gradientLayer.locations = [0.0, 0.5] // Start and end points of the gradient
 
         // Add the gradient layer to the gradientView
-        gradientView.layer.addSublayer(gradientLayer)
+       // gradientView.layer.addSublayer(gradientLayer)
         
         // Add the gradient view as a subview to the main view
-        vC.view.insertSubview(gradientView, at: 0) // Add behind all other views
+        //vC.view.insertSubview(gradientView, at: 0) // Add behind all other views
     }
     
     
