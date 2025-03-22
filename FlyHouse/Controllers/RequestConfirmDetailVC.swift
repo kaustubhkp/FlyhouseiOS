@@ -1850,7 +1850,8 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
                 
                 if self.timeSecond == 0 && self.acceptTimeSecond != 0{
                     cell.showMiddlePlane()
-                    }else if UserDefaults.standard.object(forKey: "planAnimationLastPoint") == nil{
+                    
+                }else{
                     cell.resetPlanePosition()
                 }
             }
