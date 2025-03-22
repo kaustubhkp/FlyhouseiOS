@@ -65,9 +65,9 @@ class PastRequestTblCell: UITableViewCell {
     }
     
     func planeStartEndPointSetting(){
-        self.startPoint = CGPoint(x: s_routeRoundedView.frame.origin.x+12, y: s_routeRoundedView.frame.origin.y) // Initial position of the plane
+        self.startPoint = CGPoint(x: s_routeRoundedView.frame.origin.x+14, y: s_routeRoundedView.frame.origin.y) // Initial position of the plane
         print(self.startPoint!)
-        self.endPoint = CGPoint(x: d_routeRoundedView.frame.origin.x-7, y: d_routeRoundedView.frame.origin.y)  // Final destination of the plane
+        self.endPoint = CGPoint(x: d_routeRoundedView.frame.origin.x-24, y: d_routeRoundedView.frame.origin.y)  // Final destination of the plane
         print(self.endPoint!)
     }
     
@@ -80,23 +80,6 @@ class PastRequestTblCell: UITableViewCell {
         self.showStartPositionPlane()
     }
     
-    func animatePlane(from startPoint: CGPoint, to endPoint: CGPoint, duration: TimeInterval) {
-            // Use the `UIView.animate` method to move the plane image
-        UIView.animate(withDuration: 1.0,
-                           delay: 0,
-                           options: [.curveLinear],
-                           animations: {
-                
-                if self.endPoint != self.planImageview.frame.origin{
-                    self.planImageview.frame.origin.x += 4 // Move to the final point
-                }else{
-                    self.planImageview.frame.origin.x = self.endPoint.x
-                }
-            }, completion: { finished in
-                print("Animation completed!")
-                self.planImageview.frame.origin.x = self.endPoint.x
-        })
-    }
     
     func calculateDistance(from startPoint: CGPoint, to endPoint: CGPoint) -> CGFloat {
             // Calculate Euclidean distance
@@ -112,16 +95,27 @@ class PastRequestTblCell: UITableViewCell {
             
             if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
                 self.planePositionX = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
+                
+                self.endPoint = CGPoint(x: self.d_routeRoundedView.frame.origin.x-24, y: self.d_routeRoundedView.frame.origin.y)  // Final destination of the plane
+                print("End Point:\(self.endPoint.x)\n")
             }
+            
+            if self.planSpeed == 0.0 {
+                if UserDefaults.standard.object(forKey: "planAnimationSpeed") != nil {
+                    self.planSpeed = UserDefaults.standard.object(forKey: "planAnimationSpeed") as! CGFloat
+                }
+            }
+            
+            
+            print(self.planePositionX)
             if self.planImageview.frame.origin.x < self.endPoint.x {
                 self.planePositionX += self.planSpeed
                 self.planImageview.frame.origin.x = self.planePositionX
-                UserDefaults.standard.set(self.planePositionX, forKey: "planAnimationLastPoint")
-                UserDefaults.standard.set(self.planSpeed, forKey: "planAnimationSpeed")
+                UserDefaults.standard.set(self.planImageview.frame.origin.x, forKey: "planAnimationLastPoint")
                 UserDefaults.standard.synchronize()
-                print("Plan Position:\(self.planImageview.frame.origin.x)")
+                print("Plan Position:\(self.planImageview.frame.origin.x)\n")
             }else{
-                self.planImageview.frame.origin.x = self.endPoint.x
+                //self.planImageview.frame.origin.x = self.endPoint.x
             }
         }, completion: { finished in
             if finished {
@@ -132,11 +126,14 @@ class PastRequestTblCell: UITableViewCell {
         })
     }
     
-    func updatePlanePosition(seconds:Int) {
+    func updatePlanePosition(seconds:Int,typeIndex:Int) {
         // 4. Update the X position of the plane
         if  self.planePositionX == 0{
             if UserDefaults.standard.object(forKey: "planAnimationLastPoint") == nil {
-                self.resetPlanePosition()
+                print(self.planImageview.frame.origin.x)
+                self.showStartPositionPlane()
+                self.planImageview.isHidden = false
+                self.planePositionX = self.planImageview.frame.origin.x
             }
         }
         
@@ -146,22 +143,27 @@ class PastRequestTblCell: UITableViewCell {
             distance = calculateDistance(from: self.startPoint, to: self.endPoint)
             UserDefaults.standard.set(distance, forKey: "distance")
             UserDefaults.standard.synchronize()
+            if UserDefaults.standard.object(forKey: "planAnimationSpeed") == nil{
+                // Calculate the speed (distance per second)
+                
+                var durationSec = OFFER_TIME
+                if typeIndex == 1{
+                    durationSec = OFFER_TIME * 2
+                }
+                let duration: TimeInterval = TimeInterval(durationSec) // 90 seconds
+                print("Duration : \(duration)\n")
+                self.planSpeed = distance / CGFloat(duration)
+                UserDefaults.standard.set(self.planSpeed, forKey: "planAnimationSpeed")
+                UserDefaults.standard.synchronize()
+            }
         }else{
             distance = UserDefaults.standard.object(forKey: "distance") as! CGFloat
         }
+        print("Animation Seconds : \(seconds)\n")
+        print("Distance : \(distance)\n")
+        print("Plane Speed: \(self.planSpeed)\n")
         
-        // Calculate the speed (distance per second)
-        let duration: TimeInterval = TimeInterval(OFFER_TIME) // 90 seconds
-        self.planSpeed = distance / CGFloat(duration)
-        print("Plane Speed: \(self.planSpeed)")
-        
-        if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
-            self.planePositionX = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
-        }else{
-            self.planePositionX = self.startPoint.x
-        }
         self.animatePlane(sec:seconds)
-        //self.animatePlane(from: self.startPoint, to: self.endPoint, duration: duration)
     }
     
     func showMiddlePlane(){

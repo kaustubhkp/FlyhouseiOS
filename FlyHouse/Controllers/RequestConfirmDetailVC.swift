@@ -187,6 +187,8 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidBecomeActive(_:)), name: UIApplication.didBecomeActiveNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(applicationDidEnterBackground(_:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(appWillTerminate), name: UIApplication.willTerminateNotification, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -201,6 +203,8 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
         NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
         
         NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+        
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willTerminateNotification, object: nil)
     }
     
     func setTableDelegateAndDataSource(){
@@ -663,8 +667,22 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
     
     @objc func applicationDidEnterBackground(_ notification: NotificationCenter){
         self.isCalledAPI = false
+        
+        if self.timeSecond != 0{
+            UserDefaults.standard.set(self.timeSecond, forKey: "lastTimeSeconds")
+            UserDefaults.standard.synchronize()
+        }
+        
         if self.pendingResponseData != nil{
             UserDefaults.standard.set(self.pendingResponseData.ChartererAcceptanceTimeMilliseconds!, forKey: "ChartererAcceptanceTimeMilliseconds")
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
+    // When app is terminating (killed or shut down by the system)
+    @objc func appWillTerminate() {
+        if self.timeSecond != 0{
+            UserDefaults.standard.set(self.timeSecond, forKey: "lastTimeSeconds")
             UserDefaults.standard.synchronize()
         }
     }
@@ -813,6 +831,33 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
         UserDefaults.standard.synchronize()
     }
     
+    func resetPlaneAnimationPosition(tSecond:Int){
+        if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+            
+            if UserDefaults.standard.object(forKey: "lastTimeSeconds") != nil {
+                
+                
+                let speed = UserDefaults.standard.object(forKey: "planAnimationSpeed") as! CGFloat
+                
+                let lastTime:Int = UserDefaults.standard.object(forKey: "lastTimeSeconds") as! Int
+                print("Last Time : \(lastTime)\n")
+                
+                let waitingTime = (lastTime - tSecond)
+                
+                print("Waiting Time : \(waitingTime)\n")
+                
+                let lastPosition = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
+                print("Last Position : \(lastPosition)\n")
+                
+                let currPosition = lastPosition + (CGFloat(waitingTime) * speed)
+                
+                UserDefaults.standard.set(currPosition, forKey: "planAnimationLastPoint")
+            }
+            
+            UserDefaults.standard.synchronize()
+        }
+    }
+    
     func setRemainingTimerAPI(id:Int){
         
         self.view.makeToastActivity(.center)
@@ -936,7 +981,7 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
     func startGetReadyTimer(){
         
         let cDate = CommonFunction.getOriginalDateFromString(dateStr: self.pendingResponseData.CurrentDateTime!, format: formate3)
-        
+    
         let eDate = CommonFunction.getOriginalDateFromString(dateStr: self.pendingResponseData.AuctionEndTime!, format: formate3)
         
         self.timeSecond = CommonFunction.getSecondsFromDate(sDate: cDate,eDate: eDate)
@@ -998,14 +1043,7 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
                         
                         self.timeStr = ""
                         self.timeSecond = response.data!
-                        
-                        if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
-                            
-                            let speed = UserDefaults.standard.object(forKey: "planAnimationSpeed") as! CGFloat
-                            let point = ((CGFloat(OFFER_TIME) - CGFloat(self.timeSecond)) * speed)
-                            UserDefaults.standard.set(point, forKey: "planAnimationLastPoint")
-                            UserDefaults.standard.synchronize()
-                        }
+                        self.resetPlaneAnimationPosition(tSecond: self.timeSecond)
                         self.showTimer()
                         self.setTableDelegateAndDataSource()
 
@@ -1807,12 +1845,12 @@ extension RequestConfirmDetailVC : UITableViewDelegate, UITableViewDataSource{
             
             
             if self.timeSecond != 0{
-                cell.updatePlanePosition(seconds: self.timeSecond)
+                cell.updatePlanePosition(seconds: self.timeSecond,typeIndex: self.typeIndex)
             }else{
                 
                 if self.timeSecond == 0 && self.acceptTimeSecond != 0{
                     cell.showMiddlePlane()
-                }else{
+                    }else if UserDefaults.standard.object(forKey: "planAnimationLastPoint") == nil{
                     cell.resetPlanePosition()
                 }
             }

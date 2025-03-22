@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0FC8F2EA-D159-4FDF-A666-377A222C9F71"
+            uuid = "E5E38809-B244-4290-A202-3C4125CAB5C6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FlyHouse/Controllers/RequestConfirmDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "649"
-            endingLineNumber = "649"
-            landmarkName = "applicationDidBecomeActive(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DA6FFD0C-B96D-499B-95B4-AD5161827045"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "FlyHouse/Views/TableCells/PastRequestTblCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
-            landmarkName = "showMiddlePlane()"
+            startingLineNumber = "835"
+            endingLineNumber = "835"
+            landmarkName = "resetPlaneAnimationPosition(tSecond:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

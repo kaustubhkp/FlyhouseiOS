@@ -32,6 +32,9 @@ import UIKit
     
     @objc optional
     func setTollNumber(tno:String)
+    
+    @objc optional
+    func setRoomkey(key:String)
 }
 
 class HomeCell2: UITableViewCell {
@@ -137,7 +140,7 @@ class HomeCell2: UITableViewCell {
         
     }
     
-    func configuerOtherCell(indexPath:IndexPath,noOfPass:String,price:String,aircrafts:[String]){
+    func configuerOtherCell(indexPath:IndexPath,noOfPass:String,roomkey:String,aircrafts:[String]){
         self.cellMainView2.isHidden = true
         self.cellMainView.isHidden = false
         if indexPath.row == 0{// Number of Passenger
@@ -158,21 +161,21 @@ class HomeCell2: UITableViewCell {
             self.imageV.image = UIImage(named: "profile_unselect")
         
             
-        }else if indexPath.row == 1{ // Price
+        }else if indexPath.row == 1{ // Room Key
             
             self.fieldTxtF.isHidden = false
             self.fieldTxtF.isUserInteractionEnabled = true
             self.fieldBtn.isHidden = true
-            self.imageWidthConst.constant = 27
+            self.imageWidthConst.constant = 25
             let attributes = [
                 NSAttributedString.Key.foregroundColor: UIColor.lightGray,
                 NSAttributedString.Key.font : UIFont.RegularWithSize(size: 12) // Note the !
             ]
-            fieldTxtF.keyboardType = .numberPad
-            fieldTxtF.attributedPlaceholder = NSAttributedString(string: "Price", attributes:attributes)
-            self.imageV.image = UIImage(named: "dollerSign")!.withRenderingMode(.alwaysTemplate)
+            fieldTxtF.keyboardType = .default
+            fieldTxtF.attributedPlaceholder = NSAttributedString(string: "Room Key", attributes:attributes)
+            self.imageV.image = UIImage(named: "roomkey")!.withRenderingMode(.alwaysTemplate)
             self.imageV.tintColor = UIColor.lightGray
-            self.fieldTxtF.text = price
+            self.fieldTxtF.text = roomkey
             self.fieldTxtF.tag = 2
             
         }else{ // Prefered Aircraft
@@ -260,7 +263,8 @@ extension HomeCell2 : UITextFieldDelegate{
         if textField.tag == 1{
             self.delegate?.setPassenger?(pax: textField.text!)
         }else if textField.tag == 2{
-            self.delegate?.setPrice?(price: textField.text!)
+            self.delegate?.setRoomkey?(key: textField.text!)
+            //self.delegate?.setPrice?(price: textField.text!)
         }else{
             self.delegate?.setTollNumber?(tno: textField.text!)
         }

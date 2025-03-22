@@ -28,10 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
         
         //self.APICheckVersionCall()
-        FirebaseApp.configure()
-        Messaging.messaging().delegate = self
-        UNUserNotificationCenter.current().delegate = self
-        requestNotificationPermission()
+        //FirebaseApp.configure()
+        //Messaging.messaging().delegate = self
+        //UNUserNotificationCenter.current().delegate = self
+        //requestNotificationPermission()
         
         let min: Double = 28875.0
         let max: Double = 46750.0

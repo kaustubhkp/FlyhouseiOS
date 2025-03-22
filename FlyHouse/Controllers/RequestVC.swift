@@ -69,6 +69,8 @@ class RequestVC: NavigationBarView,Storyboardable {
     var returnStartTime:String! = ""
     
     var price:String! = "5000"
+    var roomkey:String! = ""
+    var IsRoomKeyRequest:Bool! = false
     var noOfPass:String! = ""
     var preferAircrafts:[String] = []
     var preferAircraftId:[String] = []
@@ -213,10 +215,11 @@ class RequestVC: NavigationBarView,Storyboardable {
                 if response.data != nil{
                     let data = response.data!
                     
-                    if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil {
+                    if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil ||  UserDefaults.standard.object(forKey: "distance") != nil || UserDefaults.standard.object(forKey: "planAnimationSpeed") != nil{
                         UserDefaults.standard.removeObject(forKey: "planAnimationLastPoint")
                         UserDefaults.standard.removeObject(forKey: "distance")
                         UserDefaults.standard.removeObject(forKey:"planAnimationSpeed")
+                        UserDefaults.standard.removeObject(forKey: "lastTimeSeconds")
                         UserDefaults.standard.synchronize()
                     }
                     
@@ -675,10 +678,12 @@ class RequestVC: NavigationBarView,Storyboardable {
         self.tripTypeIndex = 0
         self.tripTypeArr = 1
         self.charteredReqId = 0
+        self.roomkey = ""
+        self.IsRoomKeyRequest = false
         self.multiCityArr.removeAllObjects()
         self.addNewSection1Data()
         self.requestTableView.reloadData()
-        
+        self.termsBtnClicked(self.termsBtn)
     }
     
     func checkOneWayRoundTripFields() -> Bool{
@@ -1281,7 +1286,7 @@ extension RequestVC : UITableViewDelegate,UITableViewDataSource{
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.RequestCell2, for: indexPath) as! HomeCell2
                 
                 cell.delegate = self
-                cell.configuerOtherCell(indexPath: indexPath,noOfPass:self.noOfPass,price:self.price,aircrafts:self.preferAircrafts)
+                cell.configuerOtherCell(indexPath: indexPath,noOfPass:self.noOfPass,roomkey:self.roomkey,aircrafts:self.preferAircrafts)
                 return cell
             }else{
                let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.SplitPaymentCell, for: indexPath) as! SplitPaymentCell
@@ -1376,6 +1381,19 @@ extension RequestVC : HomeCell2Delegate{
     
     func setPrice(price: String) {
         self.price = price
+        self.requestTableView.reloadData()
+    }
+    
+    func setRoomkey(key: String) {
+        self.roomkey = key
+        if key.count > 0 {
+            self.IsRoomKeyRequest = true
+        }else{
+            self.IsRoomKeyRequest = false
+        }
+        
+        print(self.roomkey!)
+        print(self.IsRoomKeyRequest!)
         self.requestTableView.reloadData()
     }
     
@@ -1647,6 +1665,15 @@ extension RequestVC : RequestDetailVCDelegate{
 extension RequestVC : RequestConfirmDetailVCDelegate{
     
     func cancelRequest() {
+        
+        if UserDefaults.standard.object(forKey: "planAnimationLastPoint") != nil ||  UserDefaults.standard.object(forKey: "distance") != nil || UserDefaults.standard.object(forKey: "planAnimationSpeed") != nil{
+            UserDefaults.standard.removeObject(forKey: "planAnimationLastPoint")
+            UserDefaults.standard.removeObject(forKey: "distance")
+            UserDefaults.standard.removeObject(forKey:"planAnimationSpeed")
+            UserDefaults.standard.removeObject(forKey: "lastTimeSeconds")
+            UserDefaults.standard.synchronize()
+        }
+        
         self.APICancelCharterRequestCall()
         
     }
