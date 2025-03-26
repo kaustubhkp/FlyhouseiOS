@@ -884,6 +884,8 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "EndDateTime":sDate!,
                           "Distance":"0",
                           "Note":"",
+                          "RoomKey":self.roomkey!,
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -939,6 +941,8 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "EndDateTime":sDate!,
                           "Distance":"0",
                           "Note":"",
+                          "RoomKey":self.roomkey!,
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -983,6 +987,8 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "EndDateTime":sDate,
                           "Distance":"0",
                           "Note":"",
+                          "RoomKey":self.roomkey!,
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -1202,7 +1208,7 @@ extension RequestVC : UITableViewDelegate,UITableViewDataSource{
                 return self.multiCityArr.count + 1 //Multicity
             }
         }else{
-            return 2 //Passengers, remove 1 and slpit payments
+            return 3 //Passengers, remove 1 and slpit payments
         }
     }
     
@@ -1283,6 +1289,13 @@ extension RequestVC : UITableViewDelegate,UITableViewDataSource{
         }else{// Passengers and Price || indexPath.row == 1
             
             if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.RequestCell2, for: indexPath) as! HomeCell2
+                
+                cell.delegate = self
+                cell.configuerOtherCell(indexPath: indexPath,noOfPass:self.noOfPass,roomkey:self.roomkey,aircrafts:self.preferAircrafts)
+                return cell
+            }else if indexPath.row == 1{
+                
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.RequestCell2, for: indexPath) as! HomeCell2
                 
                 cell.delegate = self

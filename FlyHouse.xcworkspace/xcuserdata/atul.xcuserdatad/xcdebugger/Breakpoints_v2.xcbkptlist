@@ -7,32 +7,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E5E38809-B244-4290-A202-3C4125CAB5C6"
+            uuid = "5C4A0E26-A9C4-44F5-B343-718013C32FA4"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyHouse/Controllers/RequestConfirmDetailVC.swift"
+            filePath = "FlyHouse/Views/TableCells/PastRequestTblCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "835"
-            endingLineNumber = "835"
-            landmarkName = "resetPlaneAnimationPosition(tSecond:)"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "updatePlanePosition(seconds:typeIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF67249A-6654-4ECD-9C99-CD3D1BB82B27"
+            uuid = "8F2CC9D2-C87E-4A22-8562-039DA75757E2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "FlyHouse/Controllers/RequestConfirmDetailVC.swift"
+            filePath = "FlyHouse/Views/TableCells/PastRequestTblCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1854"
-            endingLineNumber = "1854"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
+            landmarkName = "updatePlanePosition(seconds:typeIndex:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -855,6 +855,9 @@ class RequestConfirmDetailVC: NavigationBarView,Storyboardable {
             }
             
             UserDefaults.standard.synchronize()
+        }else{
+            
+            
         }
     }
     
