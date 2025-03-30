@@ -174,6 +174,7 @@ struct BestAndMoreOptionData : Codable{
     var requestTypeToUseID :Int?
     var ownerID:Int?
     var partnerProfileRatings:[PartnerProfileRatingsData]?
+    var strikeThroughPrice:Double?
     
     var title:String?
     
@@ -195,6 +196,7 @@ struct BestAndMoreOptionData : Codable{
         case requestTypeToUseID = "RequestTypeToUseID"
         case ownerID = "OwnerID"
         case partnerProfileRatings = "PartnerProfileRatings"
+        case strikeThroughPrice = "StrikeThroughPrice"
     }
 }
 
@@ -220,6 +222,7 @@ struct MoreOptionsData :Codable{
     var RequestTypeToUseID:Int?
     var WinningPrice:Double?
     var PartnerProfileRatings:[PartnerProfileRatingsData]?
+    var StrikeThroughPrice:Double?
     
     enum CodingKeys: String, CodingKey {
         case ID
@@ -243,6 +246,7 @@ struct MoreOptionsData :Codable{
         case RequestTypeToUseID
         case WinningPrice
         case PartnerProfileRatings
+        case StrikeThroughPrice
     }
 }
 

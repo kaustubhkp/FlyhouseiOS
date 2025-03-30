@@ -37,6 +37,7 @@ class BestAndMoreOptionCell: UITableViewCell {
     
     @IBOutlet weak var priceTitleLabel:UILabel!
     @IBOutlet weak var priceLabel:UILabel!
+    @IBOutlet weak var priceLabel1:UILabel!
     
     @IBOutlet weak var headerTitleView:UIView!
     @IBOutlet var detailViewToTopHeaderViewConst:NSLayoutConstraint!
@@ -189,10 +190,29 @@ class BestAndMoreOptionCell: UITableViewCell {
         if data.PreferredAircraft != nil{
             self.aircraftNameLabel.text = data.PreferredAircraftType!.uppercased() //data.PreferredAircraft!.capitalized
         }
+        
+        if data.StrikeThroughPrice != nil{
+            let amount = CommonFunction.getCurrencyValue2(amt: Float(data.StrikeThroughPrice!), code: CURRENCY_CODE)
+            
+            // Create an NSMutableAttributedString
+            let attributedString = NSMutableAttributedString(string: amount)
+
+            // Add the strikethrough style to the entire string
+            let range = NSRange(location: 0, length: amount.count)
+            attributedString.addAttribute(.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: range)
+
+            // Set the attributed text to the label
+            //label.attributedText = attributedString
+            
+            self.priceLabel.attributedText = attributedString
+        }
+        
+    
         if data.FinalAmount != nil{
             let amount = CommonFunction.getCurrencyValue2(amt: Float(data.FinalAmount!), code: CURRENCY_CODE)
-            self.priceLabel.text = amount
+            self.priceLabel1.text = amount
         }
+        
         
         if data.PartnerProfileRatings!.count > 0{
             self.safetyRatingMainView.isHidden = false

@@ -97,7 +97,7 @@ class PastRequestTblCell: UITableViewCell {
                 self.planePositionX = UserDefaults.standard.object(forKey: "planAnimationLastPoint") as! CGFloat
                 
                 self.endPoint = CGPoint(x: self.d_routeRoundedView.frame.origin.x-24, y: self.d_routeRoundedView.frame.origin.y)  // Final destination of the plane
-                print("End Point:\(self.endPoint.x)\n")
+                //print("End Point:\(self.endPoint.x)\n")
             }
             
             if self.planSpeed == 0.0 {
@@ -113,7 +113,7 @@ class PastRequestTblCell: UITableViewCell {
                 self.planImageview.frame.origin.x = self.planePositionX
                 UserDefaults.standard.set(self.planImageview.frame.origin.x, forKey: "planAnimationLastPoint")
                 UserDefaults.standard.synchronize()
-                print("Plan Position:\(self.planImageview.frame.origin.x)\n")
+                //print("Plan Position:\(self.planImageview.frame.origin.x)\n")
             }else{
                 //self.planImageview.frame.origin.x = self.endPoint.x
             }
@@ -151,7 +151,7 @@ class PastRequestTblCell: UITableViewCell {
                     durationSec = OFFER_TIME * 2
                 }
                 let duration: TimeInterval = TimeInterval(durationSec) // 90 seconds
-                print("Duration : \(duration)\n")
+                //print("Duration : \(duration)\n")
                 self.planSpeed = distance / CGFloat(duration)
                 UserDefaults.standard.set(self.planSpeed, forKey: "planAnimationSpeed")
                 UserDefaults.standard.synchronize()
@@ -159,9 +159,9 @@ class PastRequestTblCell: UITableViewCell {
         }else{
             distance = UserDefaults.standard.object(forKey: "distance") as! CGFloat
         }
-        print("Animation Seconds : \(seconds)\n")
-        print("Distance : \(distance)\n")
-        print("Plane Speed: \(self.planSpeed)\n")
+        //print("Animation Seconds : \(seconds)\n")
+        //print("Distance : \(distance)\n")
+        //print("Plane Speed: \(self.planSpeed)\n")
         
         self.animatePlane(sec:seconds)
     }
