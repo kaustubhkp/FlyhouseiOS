@@ -133,6 +133,13 @@
 		B73842152C8A2A710075ACB9 /* SafetyRatingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B73842132C8A2A710075ACB9 /* SafetyRatingCell.xib */; };
 		B73842192C8ABF560075ACB9 /* RatingImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B73842182C8ABF560075ACB9 /* RatingImageViewController.swift */; };
 		B744A4B62D80A7200043EAF9 /* INTRO_FLYHOUSE.mov in Resources */ = {isa = PBXBuildFile; fileRef = B744A4B52D80A7200043EAF9 /* INTRO_FLYHOUSE.mov */; };
+		B744A4FC2D9B05D10043EAF9 /* HouseHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A4FB2D9B05D10043EAF9 /* HouseHours.swift */; };
+		B744A4FF2D9DC6240043EAF9 /* HHMyKeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A4FD2D9DC6240043EAF9 /* HHMyKeyCell.swift */; };
+		B744A5002D9DC6240043EAF9 /* HHMyKeyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744A4FE2D9DC6240043EAF9 /* HHMyKeyCell.xib */; };
+		B744A5032D9F07510043EAF9 /* HHMyEarningCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744A5022D9F07510043EAF9 /* HHMyEarningCell.xib */; };
+		B744A5042D9F07510043EAF9 /* HHMyEarningCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A5012D9F07510043EAF9 /* HHMyEarningCell.swift */; };
+		B744A5072D9FE8C80043EAF9 /* HHMyEarningTblCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B744A5052D9FE8C80043EAF9 /* HHMyEarningTblCell.swift */; };
+		B744A5082D9FE8C80043EAF9 /* HHMyEarningTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B744A5062D9FE8C80043EAF9 /* HHMyEarningTblCell.xib */; };
 		B750AEB52D33B67F008FB40C /* HomeTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750AEB42D33B67A008FB40C /* HomeTabBarVC.swift */; };
 		B78030872C80F45300946593 /* BestAndMoreOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78030852C80F45300946593 /* BestAndMoreOptionCell.swift */; };
 		B78030882C80F45300946593 /* BestAndMoreOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B78030862C80F45300946593 /* BestAndMoreOptionCell.xib */; };
@@ -293,6 +300,13 @@
 		B73842132C8A2A710075ACB9 /* SafetyRatingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SafetyRatingCell.xib; sourceTree = "<group>"; };
 		B73842182C8ABF560075ACB9 /* RatingImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingImageViewController.swift; sourceTree = "<group>"; };
 		B744A4B52D80A7200043EAF9 /* INTRO_FLYHOUSE.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = INTRO_FLYHOUSE.mov; sourceTree = "<group>"; };
+		B744A4FB2D9B05D10043EAF9 /* HouseHours.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HouseHours.swift; sourceTree = "<group>"; };
+		B744A4FD2D9DC6240043EAF9 /* HHMyKeyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHMyKeyCell.swift; sourceTree = "<group>"; };
+		B744A4FE2D9DC6240043EAF9 /* HHMyKeyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHMyKeyCell.xib; sourceTree = "<group>"; };
+		B744A5012D9F07510043EAF9 /* HHMyEarningCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHMyEarningCell.swift; sourceTree = "<group>"; };
+		B744A5022D9F07510043EAF9 /* HHMyEarningCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHMyEarningCell.xib; sourceTree = "<group>"; };
+		B744A5052D9FE8C80043EAF9 /* HHMyEarningTblCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HHMyEarningTblCell.swift; sourceTree = "<group>"; };
+		B744A5062D9FE8C80043EAF9 /* HHMyEarningTblCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HHMyEarningTblCell.xib; sourceTree = "<group>"; };
 		B750AEB42D33B67A008FB40C /* HomeTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarVC.swift; sourceTree = "<group>"; };
 		B78030852C80F45300946593 /* BestAndMoreOptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestAndMoreOptionCell.swift; sourceTree = "<group>"; };
 		B78030862C80F45300946593 /* BestAndMoreOptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BestAndMoreOptionCell.xib; sourceTree = "<group>"; };
@@ -413,6 +427,7 @@
 				1C01C27D2BE7EA6700302B8B /* MyTripsDetailsVC.swift */,
 				1C61D3562BEBE718006EDA43 /* AppUpdatePopupVC.swift */,
 				B73842182C8ABF560075ACB9 /* RatingImageViewController.swift */,
+				B744A4FB2D9B05D10043EAF9 /* HouseHours.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -616,6 +631,12 @@
 				B78CEB732D4BDDA3007F4BE9 /* legCollectionCell.xib */,
 				B7EFEC2E2D7A322900271078 /* CongratulationCell.swift */,
 				B7EFEC2F2D7A322900271078 /* CongratulationCell.xib */,
+				B744A4FD2D9DC6240043EAF9 /* HHMyKeyCell.swift */,
+				B744A4FE2D9DC6240043EAF9 /* HHMyKeyCell.xib */,
+				B744A5012D9F07510043EAF9 /* HHMyEarningCell.swift */,
+				B744A5022D9F07510043EAF9 /* HHMyEarningCell.xib */,
+				B744A5052D9FE8C80043EAF9 /* HHMyEarningTblCell.swift */,
+				B744A5062D9FE8C80043EAF9 /* HHMyEarningTblCell.xib */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -731,9 +752,11 @@
 				B78CEB742D4BDDA3007F4BE9 /* legCollectionCell.xib in Resources */,
 				B78030B42C82131A00946593 /* SourceToDestHeaderCell.xib in Resources */,
 				1C80AAD72A66D74500770027 /* ContactsListCell.xib in Resources */,
+				B744A5032D9F07510043EAF9 /* HHMyEarningCell.xib in Resources */,
 				1C7E44B429CCD72300E00A15 /* MultiCityCell.xib in Resources */,
 				1C0E2AA829786D0200D043B8 /* Profile.storyboard in Resources */,
 				1C8C90EB2976EC720008628B /* NavigationBarView.xib in Resources */,
+				B744A5082D9FE8C80043EAF9 /* HHMyEarningTblCell.xib in Resources */,
 				1CD5ED632975C9D8006877B8 /* AddressList.storyboard in Resources */,
 				1C8C90E02976E4F60008628B /* LICENSE in Resources */,
 				1C8EE7612BE8D33F00273FA4 /* ConfirmationCodeCell.xib in Resources */,
@@ -753,6 +776,7 @@
 				B744A4B62D80A7200043EAF9 /* INTRO_FLYHOUSE.mov in Resources */,
 				B78030882C80F45300946593 /* BestAndMoreOptionCell.xib in Resources */,
 				1C7AB8EC2B740538006DAD8F /* FlagListViewCell.xib in Resources */,
+				B744A5002D9DC6240043EAF9 /* HHMyKeyCell.xib in Resources */,
 				B728EDA52D3D7CBE0064748C /* Outfit-Regular.ttf in Resources */,
 				B728EDA62D3D7CBE0064748C /* Outfit-Bold.ttf in Resources */,
 				B728EDA72D3D7CBE0064748C /* Outfit-SemiBold.ttf in Resources */,
@@ -837,6 +861,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B744A4FC2D9B05D10043EAF9 /* HouseHours.swift in Sources */,
 				1C0E2AAA297879DE00D043B8 /* RequestListVC.swift in Sources */,
 				1C8EE7602BE8D33F00273FA4 /* ConfirmationCodeCell.swift in Sources */,
 				1C7562272B56E79B0039F7F2 /* ConfirmedCurrentReqVC.swift in Sources */,
@@ -870,6 +895,7 @@
 				1C7BE4852973197D000F648D /* EnumStruct.swift in Sources */,
 				B78030BF2C84ECD600946593 /* TransportInflightServiceCell.swift in Sources */,
 				B78030B32C82131A00946593 /* SourceToDestHeaderCell.swift in Sources */,
+				B744A5042D9F07510043EAF9 /* HHMyEarningCell.swift in Sources */,
 				1C8C90ED2976EC720008628B /* NavigationView.swift in Sources */,
 				1CE8BBBE2AA7505200AFFB66 /* RequestListDetailVC.swift in Sources */,
 				1C92CD1829817DF200CD1DBD /* APIManager.swift in Sources */,
@@ -895,6 +921,7 @@
 				1CD4579C2B4F16F2001B3706 /* CancelRequestCell.swift in Sources */,
 				1C2F5CC92972F48900993108 /* IntroductionVC.swift in Sources */,
 				1C12A9272B78A7D0009C7E8C /* MyTripDetailCell.swift in Sources */,
+				B744A4FF2D9DC6240043EAF9 /* HHMyKeyCell.swift in Sources */,
 				1C80AACE2A66D3CD00770027 /* HeaderImageCell.swift in Sources */,
 				B78030872C80F45300946593 /* BestAndMoreOptionCell.swift in Sources */,
 				1C8C90EC2976EC720008628B /* NavigationBarView.swift in Sources */,
@@ -916,6 +943,7 @@
 				1C7A75842AD5D6460045A206 /* VerificationCodeCell.swift in Sources */,
 				B79190472D4109EC0007A037 /* TripTabVC.swift in Sources */,
 				1C8C90E42976E61A0008628B /* LeftMenuViewController.swift in Sources */,
+				B744A5072D9FE8C80043EAF9 /* HHMyEarningTblCell.swift in Sources */,
 				B78CEB752D4BDDA3007F4BE9 /* legCollectionCell.swift in Sources */,
 				1C0E2AA629786CEA00D043B8 /* ProfileVC.swift in Sources */,
 				1C0393922A66ADAA00F193F7 /* ManageContactsVC.swift in Sources */,

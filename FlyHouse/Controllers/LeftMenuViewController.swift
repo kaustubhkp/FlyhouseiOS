@@ -20,6 +20,7 @@ class LeftMenuViewController: NavigationBarView,Storyboardable {
     var menuOption = ["Past Requests",
                       "My Trips",
                       "Contact Us",
+                      "House Hours",
                       "Logout"]
 
     var mainViewController: UIViewController!
@@ -87,6 +88,10 @@ extension LeftMenuViewController : UITableViewDelegate, UITableViewDataSource{
             
             }
         }else if indexPath.row == 3{
+            let houseHoursVC = HouseHours.storyboardViewController()
+            self.navigationController?.pushViewController(houseHoursVC, animated: true)
+            
+        }else if indexPath.row == 4{
             CommonFunction.showAlertMessageWithTitle(aStrTitle: "Logout", aStrMessage: "Are you sure you want to logout?", Oktitle: "Yes", CancelTitle: "No", aViewController: self, CancelActionTap: { (cancelAct) in
                 //
             }) { (okAct) in

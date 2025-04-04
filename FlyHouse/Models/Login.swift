@@ -261,3 +261,85 @@ struct getBaseURLResponse:Codable{
         case title
     }
 }
+
+struct UserRoomKeyDataResponse:Codable{
+    var task:String?
+    var result:String?
+    var description:String?
+    var data:[UserRoomKeyData]?
+    var title:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case task
+        case result
+        case description
+        case data
+        case title
+    }
+}
+
+struct UserRoomKeyData:Codable{
+    var RoomKeyID:Int?
+    var RoomKey:String?
+    var IsParent:Int?
+    var UserFirstName:String?
+    var UserLastName:String?
+    var CreatedByName:String?
+    var CreatedOn:String?
+    var AssignedToName:String?
+    var AssignedUnAssignedText:String?
+    var DateAssigned:String?
+    var CreationDate: String?
+    var FlightHoursInMinutes: Int?
+    var FlightDollars:Double?
+    var UserID:Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case RoomKeyID
+        case RoomKey
+        case IsParent
+        case UserFirstName
+        case UserLastName
+        case CreatedByName
+        case CreatedOn
+        case AssignedToName
+        case AssignedUnAssignedText
+        case DateAssigned
+        case CreationDate
+        case FlightHoursInMinutes
+        case FlightDollars
+        case UserID
+    }
+}
+
+struct UserRoomKeyEarningsDataResponse:Codable{
+    var task:String?
+    var result:String?
+    var description:String?
+    var data:[UserRoomKeyEarningsData]?
+    var title:String?
+    
+    enum CodingKeys: String, CodingKey {
+        case task
+        case result
+        case description
+        case data
+        case title
+    }
+}
+
+struct UserRoomKeyEarningsData:Codable{
+    var AirCraftType:String?
+    var AircraftTypeID: Int?
+    var DollarsToHours: Int?
+    var HrsEarned:Double?
+    var UserID:Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case AirCraftType
+        case AircraftTypeID
+        case DollarsToHours
+        case HrsEarned
+        case UserID
+    }
+}

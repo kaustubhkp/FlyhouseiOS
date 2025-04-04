@@ -408,6 +408,42 @@ class APIUser {
             fail(error)
         }
     }
+    
+    //
+    func getUserRoomKeyEarningsData(urlStr:String,success:@escaping(UserRoomKeyEarningsDataResponse)-> Void,fail:@escaping(_ error: NSError)-> Void){
+        
+        
+        //let parameters = [:] as [String: Any]
+        var headers:HTTPHeaders!
+        if UserDefaults.standard.value(forKey: "Authorization") != nil{
+            let data = UserDefaults.standard.value(forKey: "Authorization") as! String
+            headers = ["Authorization":data] as [String:String]
+        }
+        
+        AlmofireAPIManager.GetRequest(url: urlStr,headers: headers) { response in
+            success(response)
+        } failure: { error in
+            fail(error)
+        }
+    }
+    
+    //
+    func getUserRoomKeyData(urlStr:String,success:@escaping(UserRoomKeyDataResponse)-> Void,fail:@escaping(_ error: NSError)-> Void){
+        
+        
+        //let parameters = [:] as [String: Any]
+        var headers:HTTPHeaders!
+        if UserDefaults.standard.value(forKey: "Authorization") != nil{
+            let data = UserDefaults.standard.value(forKey: "Authorization") as! String
+            headers = ["Authorization":data] as [String:String]
+        }
+        
+        AlmofireAPIManager.GetRequest(url: urlStr,headers: headers) { response in
+            success(response)
+        } failure: { error in
+            fail(error)
+        }
+    }
 }
 
 class APIHome {

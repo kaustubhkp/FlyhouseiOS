@@ -348,6 +348,36 @@
             </objects>
             <point key="canvasLocation" x="2375" y="514"/>
         </scene>
+        <!--House Hours-->
+        <scene sceneID="LV8-ed-J8x">
+            <objects>
+                <viewController storyboardIdentifier="HouseHours" id="Mfb-SW-ld1" customClass="HouseHours" customModule="FlyHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s5G-db-pIh">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WlD-ea-E9X">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Sk-31-D4G"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4Sk-31-D4G" firstAttribute="trailing" secondItem="WlD-ea-E9X" secondAttribute="trailing" id="LWn-bA-vk0"/>
+                            <constraint firstItem="WlD-ea-E9X" firstAttribute="leading" secondItem="4Sk-31-D4G" secondAttribute="leading" id="ZqY-wo-Lyw"/>
+                            <constraint firstItem="WlD-ea-E9X" firstAttribute="top" secondItem="4Sk-31-D4G" secondAttribute="top" id="ghZ-f9-pMa"/>
+                            <constraint firstItem="4Sk-31-D4G" firstAttribute="bottom" secondItem="WlD-ea-E9X" secondAttribute="bottom" id="sru-0x-qyl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="houseHoursTableView" destination="WlD-ea-E9X" id="koO-oE-yVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6F-9C-fg8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3115" y="513"/>
+        </scene>
         <!--Profile TabVC-->
         <scene sceneID="reY-Qn-fre">
             <objects>
@@ -521,6 +551,9 @@
         <image name="user_icon" width="50.666667938232422" height="49.666667938232422"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="tableBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

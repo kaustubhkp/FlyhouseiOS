@@ -760,3 +760,48 @@ extension String {
         return attributedString
     }
 }
+
+
+class CustomProgressView: UIView {
+
+    private var progressLayer = CALayer()
+    private var backgroundLayer = CALayer()
+
+    var progress: CGFloat = 0.0 {
+        didSet {
+            updateProgress()
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupView()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupView()
+    }
+
+    private func setupView() {
+        // Set up the background layer (behind the progress)
+        backgroundLayer.frame = bounds
+        backgroundLayer.backgroundColor = UIColor.white.cgColor
+        backgroundLayer.cornerRadius = backgroundLayer.frame.height/2
+        layer.addSublayer(backgroundLayer)
+
+        // Set up the progress layer
+        progressLayer.frame = bounds
+        progressLayer.backgroundColor = UIColor.hexStringToUIColor(hex: "#11ad45").cgColor
+        progressLayer.cornerRadius = backgroundLayer.frame.height/2
+        layer.addSublayer(progressLayer)
+    }
+
+    private func updateProgress() {
+        // Map progress value from range 0 to 250 to a value between 0 and 1
+        let progressInRange = min(max(progress, 0), 250) / 250.0
+        // Update the progress width based on the scaled `progress` value
+        let width = bounds.width * progressInRange
+        progressLayer.frame.size.width = width
+    }
+}

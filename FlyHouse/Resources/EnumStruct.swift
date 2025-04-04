@@ -63,6 +63,9 @@ struct TableCells{
     static let EnhanceTblCell = "EnhanceTblCell"
     static let RequestAcceptListCell = "RequestAcceptListCell"
     static let CongratulationCell = "CongratulationCell"
+    static let HHMyKeyCell = "HHMyKeyCell"
+    static let HHMyEarningCell = "HHMyEarningCell"
+    static let HHMyEarningTblCell = "HHMyEarningTblCell"
 }
 
 struct CollectionViewCells{
