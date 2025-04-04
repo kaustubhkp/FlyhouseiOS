@@ -21,6 +21,7 @@ class HHMyKeyCell: UITableViewCell {
     @IBOutlet weak var creationOnTitleLabel:UILabel!
     @IBOutlet weak var creationOnValueLabel:UILabel!
     
+    @IBOutlet weak var progressBarTitleLabel:UILabel!
     @IBOutlet weak var startHrsValLabel:UILabel!
     @IBOutlet weak var endHrsValLabel:UILabel!
     
@@ -39,6 +40,7 @@ class HHMyKeyCell: UITableViewCell {
         
         CommonFunction.setLabelsFonts(lbls: [bottomTextLabel], type: .fReguler, size: 10)
         
+        CommonFunction.setLabelsFonts(lbls: [progressBarTitleLabel], type: .fMedium, size: 18)
         // Customize the progress view if needed
         progressView.layer.cornerRadius = progressView.frame.height / 2
         
