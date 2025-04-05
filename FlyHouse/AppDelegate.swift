@@ -141,6 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func setTabBarRootViewControllerOnTabIndex(tabIndex:Int){
         
         let mainViewController  = HomeTabBarVC.storyboardViewController()
+        mainViewController.isFromReedem = true
         let navigationController = UINavigationController.init(rootViewController: mainViewController)
         self.window?.rootViewController = nil
         self.window?.rootViewController = navigationController

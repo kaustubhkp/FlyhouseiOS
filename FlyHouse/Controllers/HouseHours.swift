@@ -119,6 +119,6 @@ extension HouseHours : UITableViewDelegate,UITableViewDataSource{
 extension HouseHours : HHMyEarningCellDelegate{
     
     func redeemBtnTapped() {
-        APP_DELEGATE.setHomeToRootViewController()
+        APP_DELEGATE.setTabBarRootViewControllerOnTabIndex(tabIndex: 0)
     }
 }

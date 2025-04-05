@@ -71,6 +71,7 @@ class RequestVC: NavigationBarView,Storyboardable {
     var price:String! = "5000"
     var roomkey:String! = ""
     var IsRoomKeyRequest:Bool! = false
+    var isRedeem:String! = ""
     var noOfPass:String! = ""
     var preferAircrafts:[String] = []
     var preferAircraftId:[String] = []
@@ -885,7 +886,7 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "Distance":"0",
                           "Note":"",
                           "RoomKey":self.roomkey!,
-                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "0" : "1",
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -942,7 +943,7 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "Distance":"0",
                           "Note":"",
                           "RoomKey":self.roomkey!,
-                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "0" : "1",
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -988,7 +989,7 @@ class RequestVC: NavigationBarView,Storyboardable {
                           "Distance":"0",
                           "Note":"",
                           "RoomKey":self.roomkey!,
-                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "0" : "1",
+                          "IsRoomKeyRequest":(self.IsRoomKeyRequest! == true) ? "1" : "0",
                           "Status":self.rStatus!,
                           "PaxCount": self.noOfPass!,
                           "PaxSegment":"N/A",
@@ -1399,7 +1400,7 @@ extension RequestVC : HomeCell2Delegate{
     
     func setRoomkey(key: String) {
         self.roomkey = key
-        if key.count > 0 {
+        if self.isRedeem == "Yes" && key.count > 0 {
             self.IsRoomKeyRequest = true
         }else{
             self.IsRoomKeyRequest = false
