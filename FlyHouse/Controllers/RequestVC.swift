@@ -1209,7 +1209,12 @@ extension RequestVC : UITableViewDelegate,UITableViewDataSource{
                 return self.multiCityArr.count + 1 //Multicity
             }
         }else{
-            return 3 //Passengers, remove 1 and slpit payments
+            //Passengers, remove 1 and slpit payments
+            if self.isRedeem == "Yes"{
+                return 2
+            }else{
+                return 3
+            }
         }
     }
     
@@ -1295,7 +1300,7 @@ extension RequestVC : UITableViewDelegate,UITableViewDataSource{
                 cell.delegate = self
                 cell.configuerOtherCell(indexPath: indexPath,noOfPass:self.noOfPass,roomkey:self.roomkey,aircrafts:self.preferAircrafts)
                 return cell
-            }else if indexPath.row == 1{
+            }else if indexPath.row == 1 && self.isRedeem == ""{
                 
                 let cell = tableView.dequeueReusableCell(withIdentifier: TableCells.RequestCell2, for: indexPath) as! HomeCell2
                 
